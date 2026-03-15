@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prodotto - 3D__PrintHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app/static/css/site.css">
+  </head>
+  <body data-page="product">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="nav" id="site-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Prodotti</a>
+          <a href="materials.html">Scopri materiali e colori</a>
+          <a href="faq.html">FAQ e spedizioni</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="product product-full">
+        <div class="container product-grid">
+          <div class="product-media">
+            <div class="main-image">
+              <img id="main-image" alt="" hidden>
+              <div class="gallery-placeholder" id="gallery-placeholder" hidden>Foto principale</div>
+              <p id="image-note" class="image-note"></p>
+            </div>
+
+            <div class="mini-gallery-wrap" id="mini-gallery-wrap" hidden>
+              <div class="mini-gallery" id="mini-gallery"></div>
+            </div>
+            <div class="gallery-dots" id="gallery-dots" hidden></div>
+
+            <div class="specs">
+              <div class="option-group">
+                <h3>Colori</h3>
+                <div class="chips" id="color-chips"></div>
+              </div>
+              <div class="option-group">
+                <h3>Materiali</h3>
+                <div class="chips" id="material-chips"></div>
+              </div>
+            </div>
+
+            <div class="product-sheet">
+              <h3>Scheda prodotto</h3>
+              <div class="sheet-grid">
+                <div class="sheet-item">
+                  <span>Dimensioni indicative</span>
+                  <strong id="product-dimensions"></strong>
+                </div>
+                <div class="sheet-item">
+                  <span>Disponibilita</span>
+                  <strong id="product-availability-text"></strong>
+                </div>
+                <div class="sheet-item" id="product-shipping" hidden>
+                  <span>Tempi di spedizione</span>
+                  <strong id="product-shipping-time"></strong>
+                </div>
+                <p class="sheet-note" id="product-shipping-note"></p>
+              </div>
+            </div>
+
+            <div class="cta">
+              <button class="btn btn-primary js-open-availability" type="button">Invia richiesta disponibilita</button>
+            </div>
+
+            <div class="reviews reviews-inline">
+              <div class="reviews-head">
+                <h2>Recensioni</h2>
+              </div>
+              <div class="reviews-summary">
+                <span class="reviews-count" id="reviews-count">0 recensioni</span>
+              </div>
+              <p class="muted">Recensioni raccolte e pubblicate manualmente.</p>
+              <div class="review-list" id="review-list"></div>
+              <p class="muted" id="review-empty" hidden>Nessuna recensione approvata al momento.</p>
+            </div>
+          </div>
+
+          <div class="product-info">
+            <div class="product-top-head">
+              <h1 id="product-title">Prodotto</h1>
+              <div class="product-price-side">
+                <div class="price-block" id="price-block">
+                  <span id="price-old" class="price-old" style="display:none;"></span>
+                  <span id="price-current" class="price-current">EUR 0.00</span>
+                  <span id="price-discount" class="price-discount" style="display:none;"></span>
+                </div>
+                <span class="badge availability-inline" id="product-availability" hidden></span>
+              </div>
+            </div>
+            <p id="product-description" class="product-short"></p>
+          </div>
+        </div>
+
+        <div class="container related-products" id="related-products" hidden>
+          <div class="section-head">
+            <h2>Prodotti simili</h2>
+          </div>
+          <div class="category-carousel" data-product-carousel>
+            <button class="mini-scroll prev" type="button" aria-label="Scorri a sinistra" data-scroll="prev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6"></path>
+              </svg>
+            </button>
+            <div class="product-track" id="related-track"></div>
+            <button class="mini-scroll next" type="button" aria-label="Scorri a destra" data-scroll="next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 6l6 6-6 6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="product-sticky-cta" id="product-sticky-cta" hidden>
+      <div class="product-sticky-inner">
+        <div class="product-sticky-price">
+          <span class="product-sticky-label">Prezzo da</span>
+          <div class="price-block" id="sticky-price-block">
+            <span id="sticky-price-old" class="price-old" style="display:none;"></span>
+            <span id="sticky-price-current" class="price-current">EUR 0.00</span>
+            <span id="sticky-price-discount" class="price-discount" style="display:none;"></span>
+          </div>
+        </div>
+        <button class="btn btn-primary js-open-availability" type="button">Richiedi disponibilita</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <strong data-site-name>3D__PrintHub</strong>
+            <span class="tagline" data-site-tagline></span>
+          </div>
+          <div class="footer-links">
+            <a class="link" href="about.html">Chi sono</a>
+            <a class="link" href="faq.html">FAQ</a>
+            <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="link" data-site-email href="#" target="_blank" rel="noopener">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="availability-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="availability-title">
+        <button class="modal-close" type="button" data-close aria-label="Chiudi">x</button>
+        <h2 id="availability-title">Richiesta disponibilita</h2>
+        <p class="modal-subtitle">Chiedi conferma per prodotto, colore e materiale selezionati.</p>
+        <form class="custom-form" id="availability-form">
+          <div class="form-grid">
+            <label>
+              <span>Nome</span>
+              <input class="input" type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input class="input" type="email" name="email" required>
+            </label>
+          </div>
+          <label>
+            <span>Note</span>
+            <textarea class="input input-textarea" name="notes" placeholder="Es. quantita, tempi, dettagli"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-channel="email">Invia via email</button>
+            <button class="btn btn-ghost" type="button" data-channel="instagram">Invia via Instagram</button>
+          </div>
+          <p class="muted" id="availability-status" hidden>Richiesta inviata.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="lightbox" id="product-lightbox">
+      <div class="lightbox-backdrop" data-close></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" type="button" data-close>x</button>
+        <img id="product-lightbox-image" src="" alt="">
+      </div>
+    </div>
+
+    <div class="modal" id="custom-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="custom-title">
+        <button class="modal-close" type="button" data-close aria-label="Chiudi">x</button>
+        <div class="modal-header">
+          <div>
+            <h2 id="custom-title">Richiesta personalizzata</h2>
+            <p class="modal-subtitle">Raccontami cosa vuoi stampare e ti rispondo via email.</p>
+          </div>
+        </div>
+        <form class="custom-form" id="custom-form">
+          <div class="form-grid">
+            <label>
+              <span>Nome</span>
+              <input class="input" type="text" name="name" required>
+            </label>
+            <label>
+              <span>Contatto (email o Instagram)</span>
+              <input class="input" type="text" name="contact" required>
+            </label>
+            <label>
+              <span>Tipo di progetto</span>
+              <select class="input" name="project_type">
+                <option value="">Seleziona</option>
+                <option value="regalo">Regalo</option>
+                <option value="decorazione">Decorazione</option>
+                <option value="miniatura">Miniatura</option>
+                <option value="prototipo">Prototipo</option>
+                <option value="altro">Altro</option>
+              </select>
+            </label>
+            <label>
+              <span>Quantita</span>
+              <input class="input" type="number" name="quantity" min="1" placeholder="Es. 1">
+            </label>
+            <label>
+              <span>Colori desiderati</span>
+              <input class="input" type="text" name="colors" placeholder="Es. verde acqua, nero">
+            </label>
+            <label>
+              <span>Materiali desiderati</span>
+              <input class="input" type="text" name="materials" placeholder="Es. PLA, PETG">
+            </label>
+            <label>
+              <span>Budget indicativo</span>
+              <input class="input" type="text" name="budget" placeholder="Es. 30-50 EUR">
+            </label>
+            <label>
+              <span>Tempistica desiderata</span>
+              <input class="input" type="text" name="deadline" placeholder="Es. entro 2 settimane">
+            </label>
+          </div>
+          <label>
+            <span>Descrizione richiesta</span>
+            <textarea class="input input-textarea" name="description" required></textarea>
+          </label>
+          <label>
+            <span>Link o riferimento (opzionale)</span>
+            <input class="input" type="text" name="reference_link" placeholder="Es. link a modello o foto">
+          </label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-channel="email">Invia via email</button>
+            <button class="btn btn-ghost" type="button" data-channel="instagram">Invia via Instagram</button>
+          </div>
+          <p class="muted" id="custom-status" hidden>Richiesta inviata.</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="app/static/js/site.js" defer></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

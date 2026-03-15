@@ -1,0 +1,35 @@
+[
+  {
+    "name": "PETG",
+    "description": "Resistente agli urti e alle temperature: adatto per oggetti da uso quotidiano.",
+    "colors": [
+      { "name": "Nero opaco", "sample_image": "petg-nero-opaco.svg" }
+    ]
+  },
+  {
+    "name": "PLA",
+    "description": "Materiale versatile per decorazione e oggetti da interno, con ottima resa estetica.",
+    "colors": [
+      { "name": "Nero opaco", "sample_image": "pla-nero-opaco.svg" },
+      { "name": "Bianco opaco", "sample_image": "pla-bianco-opaco.svg" },
+      { "name": "Terracotta", "sample_image": "pla-terracotta.svg" },
+      { "name": "Sabbia", "sample_image": "pla-sabbia.svg" },
+      { "name": "Verde acqua", "sample_image": "pla-verde-acqua.svg" },
+      { "name": "Verde scuro", "sample_image": "pla-verde-scuro.svg" },
+      { "name": "Argento", "sample_image": "PLA_Argento.jpg" },
+      { "name": "Bianco", "sample_image": "PLA_Bianco.jpg" },
+      { "name": "Blu", "sample_image": "PLA_Blu.jpg" },
+      { "name": "Nero", "sample_image": "PLA_Nero.jpg" },
+      { "name": "Rosa", "sample_image": "PLA_Rosa.jpg" },
+      { "name": "Rosso", "sample_image": "PLA_Rosso.jpg" },
+      { "name": "Verde erba", "sample_image": "PLA_Verde_Erba.jpg" }
+    ]
+  },
+  {
+    "name": "Resina",
+    "description": "Alta definizione per dettagli fini e superfici pulite.",
+    "colors": [
+      { "name": "Grigio pietra", "sample_image": "resina-grigio-pietra.svg" }
+    ]
+  }
+]

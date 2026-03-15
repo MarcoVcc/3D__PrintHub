@@ -1,0 +1,549 @@
+[
+  {
+    "slug": "moon-lamp",
+    "title": "Moon Lamp",
+    "category": "Casa e Ufficio",
+    "base_price": 28.0,
+    "base_discount_price": null,
+    "short_description": "Lampada decorativa effetto luna.",
+    "description": "Lampada da tavolo con texture lunare, ideale per camera o salotto.",
+    "availability": "Su ordinazione",
+    "dimensions": "14 x 14 x 16 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Bianco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "MoonLamp_PLA_Bianco_1.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "MoonLamp_PLA_Bianco_2.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "MoonLamp_PLA_Bianco_3.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "MoonLamp_PLA_Bianco_4.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "porta-bacchette",
+    "title": "Porta Bacchette",
+    "category": "Casa e Ufficio",
+    "base_price": 14.0,
+    "base_discount_price": null,
+    "short_description": "Supporto da tavolo in stile minimal.",
+    "description": "Porta bacchette stampato in PLA, compatto e semplice da pulire.",
+    "availability": "Disponibile",
+    "dimensions": "10 x 6 x 3 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero opaco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "PortaBacchette_PLA_Nero_1.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "PortaBacchette_PLA_Nero_2.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "PortaBacchette_PLA_Nero_3.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false
+  },
+  {
+    "slug": "porta-spezie",
+    "title": "Porta Spezie",
+    "category": "Casa e Ufficio",
+    "base_price": 18.0,
+    "base_discount_price": null,
+    "short_description": "Organizzatore compatto per cucina.",
+    "description": "Porta spezie in PLA progettato per tenere in ordine i barattoli piu usati.",
+    "availability": "Su ordinazione",
+    "dimensions": "22 x 8 x 9 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero opaco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "PortaSpezie_PLA_Nero_1.jpeg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "stand-telefono",
+    "title": "Stand Telefono",
+    "category": "Casa e Ufficio",
+    "base_price": 17.0,
+    "base_discount_price": 15.0,
+    "short_description": "Supporto smartphone da scrivania in PLA multicolor.",
+    "description": "Stand telefono da tavolo con inclinazione comoda per videochiamate e contenuti multimediali.",
+    "availability": "Disponibile",
+    "dimensions": "9 x 8 x 11 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "StandTelefono_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "StandTelefono_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "StandTelefono_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "StandTelefono_PLA_Multicolor_4.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "StandTelefono_PLA_Multicolor_5.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "litofania-personalizzata",
+    "title": "Litofania Personalizzata",
+    "category": "Litofanie",
+    "base_price": 35.0,
+    "base_discount_price": 30.0,
+    "short_description": "Litofania personalizzata retroilluminata.",
+    "description": "Litofania personalizzata, ideale per creare un'atmosfera unica con la tua foto preferita. Retroilluminazione inclusa per un effetto scenico.",
+    "availability": "Su ordinazione",
+    "dimensions": "10 x 5 x 10 cm",
+    "shipping_time": "5-8 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Bianco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "Litofania_PLA_BiancoNero_1.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "Litofania_PLA_BiancoNero_2.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "Litofania_PLA_BiancoNero_3.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "Litofania_PLA_BiancoNero_4.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "Litofania_PLA_BiancoNero_5.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": true,
+    "best_seller": true,
+    "is_new": true
+  },
+  {
+    "slug": "ironman-pla-rosso-nero",
+    "title": "IronMan",
+    "category": "Miniature",
+    "base_price": 40.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura con posa dinamica e base inclusa.",
+    "description": "Miniatura di IronMan in posa, con base inclusa, perfetta per collezionisti e appassionati di supereroi.",
+    "availability": "Disponibile",
+    "dimensions": "20 x 20 x 20 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Rosso"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "IronMan_PLA_RossoNero_1.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "IronMan_PLA_RossoNero_2.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "IronMan_PLA_RossoNero_3.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": true,
+    "best_seller": true,
+    "is_new": false
+  },
+  {
+    "slug": "sdentato-mini",
+    "title": "Sdentato Mini",
+    "category": "Miniature",
+    "base_price": 24.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura colorata con dettagli fini.",
+    "description": "Miniatura di Sdentato in versione compatta, stampata in PLA con finitura multicolor.",
+    "availability": "Disponibile",
+    "dimensions": "12 x 8 x 9 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "SdentatoMini_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_4.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_5.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_6.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "SdentatoMini_PLA_Multicolor_7.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": true,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "umarell-realistico",
+    "title": "Umarell Realistico",
+    "category": "Miniature",
+    "base_price": 19.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura stilizzata con posa caratteristica.",
+    "description": "Personaggio umarell in stile realistico, ideale per scrivania o collezione.",
+    "availability": "Disponibile",
+    "dimensions": "7 x 5 x 11 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Rosso"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "UmarellRealistico_PLA_Rosso_1.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "UmarellRealistico_PLA_Rosso_2.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false
+  },
+  {
+    "slug": "ford-gt40",
+    "title": "Ford GT40",
+    "category": "Modellismo",
+    "base_price": 55.0,
+    "base_discount_price": null,
+    "short_description": "Modello da esposizione in PLA multicolor.",
+    "description": "Replica in scala della Ford GT40 con finitura multicolor e dettagli da vetrina.",
+    "availability": "Su ordinazione",
+    "dimensions": "24 x 10 x 8 cm",
+    "shipping_time": "5-9 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "FordGT40_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "FordGT40_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "FordGT40_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "flexi-drago-portachiavi",
+    "title": "Flexi Drago Portachiavi",
+    "category": "Portachiavi",
+    "base_price": 11.0,
+    "base_discount_price": 9.5,
+    "short_description": "Portachiavi snodato dual color.",
+    "description": "Portachiavi flessibile con forma drago, ideale come gadget o piccolo regalo personalizzato.",
+    "availability": "Disponibile",
+    "dimensions": "7 x 3 x 1 cm",
+    "shipping_time": "2-3 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Verde acqua",
+      "Nero opaco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "FlexiDragoPortachiavi_PLA_DualVerdeNero_1.jpg",
+        "color": "Verde acqua",
+        "material": "PLA"
+      },
+      {
+        "file": "FlexiDragoPortachiavi_PLA_DualVerdeNero_2.jpg",
+        "color": "Verde acqua",
+        "material": "PLA"
+      },
+      {
+        "file": "FlexiDragoPortachiavi_PLA_DualVerdeNero_3.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "FlexiDragoPortachiavi_PLA_DualVerdeNero_4.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": true,
+    "best_seller": true,
+    "is_new": true
+  },
+  {
+    "slug": "cartello-fanculo",
+    "title": "Cartello Fanculo",
+    "category": "Regali",
+    "base_price": 12.0,
+    "base_discount_price": null,
+    "short_description": "Oggetto ironico da scrivania.",
+    "description": "Cartello stampato in PLA pensato come idea regalo simpatica.",
+    "availability": "Disponibile",
+    "dimensions": "12 x 4 x 6 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero opaco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "CartelloFanculo_PLA_Nero_1.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "CartelloFanculo_PLA_Nero_2.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "rosa-decorativa-pla",
+    "title": "Rosa Decorativa PLA",
+    "category": "Regali",
+    "base_price": 16.0,
+    "base_discount_price": null,
+    "short_description": "Rosa decorativa disponibile in rosso e nero opaco.",
+    "description": "Rosa decorativa stampata in 3D in PLA. Stesso modello disponibile in due varianti colore.",
+    "availability": "Disponibile",
+    "dimensions": "8 x 8 x 20 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero opaco",
+      "Rosso"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "Rosa_1_nera_1.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "Rosa_1_nera_2.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "Rosa_1_rossa_1.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "Rosa_1_rossa_2.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": true,
+    "best_seller": false,
+    "is_new": true
+  },
+  {
+    "slug": "mini-presepe",
+    "title": "Mini Presepe",
+    "category": "Stagionali",
+    "base_price": 22.0,
+    "base_discount_price": null,
+    "short_description": "Decorazione natalizia in PLA silk argento.",
+    "description": "Mini presepe stampato in 3D, pensato come decorazione da tavolo per il periodo natalizio.",
+    "availability": "Su ordinazione",
+    "dimensions": "13 x 9 x 8 cm",
+    "shipping_time": "5-8 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Argento"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "MiniPresepe_PLA_Argento_1.jpg",
+        "color": "Argento",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true
+  }
+]

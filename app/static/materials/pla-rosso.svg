@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="220" viewBox="0 0 320 220">
+  <rect width="320" height="220" fill="#e38b7a"/>
+  <rect x="14" y="14" width="292" height="192" fill="none" stroke="rgba(43,26,21,0.25)" stroke-width="2"/>
+  <text x="50%" y="50%" fill="#2b1a15" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" dominant-baseline="middle">
+    PLA - Rosso
+  </text>
+</svg>

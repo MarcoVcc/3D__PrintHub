@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prodotti - 3D__PrintHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app/static/css/site.css">
+  </head>
+  <body data-page="products">
+    <header class="topbar">
+      <div class="container">
+        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+        <button class="nav-toggle" type="button" aria-label="Apri menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="nav" id="site-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Prodotti</a>
+          <a href="materials.html">Scopri materiali e colori</a>
+          <a href="faq.html">FAQ e spedizioni</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-head">
+        <div class="container">
+          <h1>Prodotti</h1>
+          <p>Catalogo completo diviso per categorie.</p>
+          <div class="quick-filters" id="quick-filters"></div>
+          <div class="cta">
+            <p class="cta-note">
+              Se non trovi il prodotto giusto, puoi chiedere informazioni per una stampa personalizzata
+              e richiedere una consulenza.
+            </p>
+            <button class="btn btn-primary btn-full js-open-custom" type="button">Richiesta personalizzata</button>
+          </div>
+          <p class="muted filter-note" id="filter-note" hidden>
+            Filtro attivo: <span id="filter-text"></span>
+            - <a class="link filter-clear" href="products.html">Rimuovi filtri</a>
+          </p>
+        </div>
+      </section>
+
+      <div id="products-content"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <strong data-site-name>3D__PrintHub</strong>
+            <span class="tagline" data-site-tagline></span>
+          </div>
+          <div class="footer-links">
+            <a class="link" href="about.html">Chi sono</a>
+            <a class="link" href="faq.html">FAQ</a>
+            <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="link" data-site-email href="#" target="_blank" rel="noopener">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" id="custom-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="custom-title">
+        <button class="modal-close" type="button" data-close aria-label="Chiudi">x</button>
+        <div class="modal-header">
+          <div>
+            <h2 id="custom-title">Richiesta personalizzata</h2>
+            <p class="modal-subtitle">Raccontami cosa vuoi stampare e ti rispondo via email.</p>
+          </div>
+        </div>
+        <form class="custom-form" id="custom-form">
+          <div class="form-grid">
+            <label>
+              <span>Nome</span>
+              <input class="input" type="text" name="name" required>
+            </label>
+            <label>
+              <span>Contatto (email o Instagram)</span>
+              <input class="input" type="text" name="contact" required>
+            </label>
+            <label>
+              <span>Tipo di progetto</span>
+              <select class="input" name="project_type">
+                <option value="">Seleziona</option>
+                <option value="regalo">Regalo</option>
+                <option value="decorazione">Decorazione</option>
+                <option value="miniatura">Miniatura</option>
+                <option value="prototipo">Prototipo</option>
+                <option value="altro">Altro</option>
+              </select>
+            </label>
+            <label>
+              <span>Quantita</span>
+              <input class="input" type="number" name="quantity" min="1" placeholder="Es. 1">
+            </label>
+            <label>
+              <span>Colori desiderati</span>
+              <input class="input" type="text" name="colors" placeholder="Es. verde acqua, nero">
+            </label>
+            <label>
+              <span>Materiali desiderati</span>
+              <input class="input" type="text" name="materials" placeholder="Es. PLA, PETG">
+            </label>
+            <label>
+              <span>Budget indicativo</span>
+              <input class="input" type="text" name="budget" placeholder="Es. 30-50 EUR">
+            </label>
+            <label>
+              <span>Tempistica desiderata</span>
+              <input class="input" type="text" name="deadline" placeholder="Es. entro 2 settimane">
+            </label>
+          </div>
+          <label>
+            <span>Descrizione richiesta</span>
+            <textarea class="input input-textarea" name="description" required></textarea>
+          </label>
+          <label>
+            <span>Link o riferimento (opzionale)</span>
+            <input class="input" type="text" name="reference_link" placeholder="Es. link a modello o foto">
+          </label>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit" data-channel="email">Invia via email</button>
+            <button class="btn btn-ghost" type="button" data-channel="instagram">Invia via Instagram</button>
+          </div>
+          <p class="muted" id="custom-status" hidden>Richiesta inviata.</p>
+        </form>
+      </div>
+    </div>
+
+    <script src="app/static/js/site.js" defer></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

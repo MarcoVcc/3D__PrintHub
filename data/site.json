@@ -1,0 +1,11 @@
+{
+  "site_name": "3D__PrintHub",
+  "tagline": "Stampe 3D su misura",
+  "contact_email": "3dprinthub.mv@gmail.com",
+  "instagram_url": "https://www.instagram.com/3dprint__hub/",
+  "instagram_dm_url": "https://ig.me/m/3dprint__hub",
+  "required_fields": {
+    "custom_request": ["name", "contact", "description"],
+    "availability_request": ["name", "email"]
+  }
+}

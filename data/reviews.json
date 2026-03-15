@@ -1,0 +1,45 @@
+{
+  "approved": [
+    {
+      "product_slug": "litofania-personalizzata",
+      "name": "Sara",
+      "text": "Risultato bellissimo: la foto prende vita con la luce dietro. Qualita top.",
+      "images": [
+        "Litofania_PLA_BiancoNero_Review1_1.jpeg",
+        "Litofania_PLA_BiancoNero_Review2_1.jpeg",
+        "Litofania_PLA_BiancoNero_Review3_1.jpg"
+      ],
+      "date": "2026-02-05"
+    },
+    {
+      "product_slug": "litofania-personalizzata",
+      "name": "Elena",
+      "text": "Dettagli molto nitidi, stampa pulita e tempi rispettati.",
+      "images": [
+        "Litofania_PLA_BiancoNero_Review_1.jpeg",
+        "Litofania_PLA_BiancoNero_Review_2.jpeg",
+        "Litofania_PLA_BiancoNero_Review_3.jpg"
+      ],
+      "date": "2026-02-11"
+    },
+    {
+      "product_slug": "flexi-drago-portachiavi",
+      "name": "Davide",
+      "text": "Portachiavi personalizzato molto bello, colori fedeli e finitura ottima.",
+      "images": [
+        "DopioNome_PLA_Nero_Review1_1.jpg",
+        "DopioNome_PLA_Nero_Review1_2.jpg",
+        "DopioNome_PLA_Rosso_Review1_1.jpg",
+        "DopioNome_PLA_Rosso_Review1_2.jpg"
+      ],
+      "date": "2026-02-18"
+    },
+    {
+      "product_slug": "ironman-pla-rosso-nero",
+      "name": "Luca",
+      "text": "Ottima qualita e dettagli ben definiti. Dal vivo rende ancora di piu.",
+      "images": [],
+      "date": "2026-02-21"
+    }
+  ]
+}
