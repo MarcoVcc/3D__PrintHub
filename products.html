@@ -12,7 +12,8 @@
   <body data-page="products">
     <header class="topbar">
       <div class="container">
-        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+
         <button class="nav-toggle" type="button" aria-label="Apri menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
         <nav class="nav" id="site-nav">
           <a href="index.html">Home</a>
@@ -28,14 +29,17 @@
       <section class="page-head">
         <div class="container">
           <h1>Prodotti</h1>
-          <p>Catalogo completo diviso per categorie.</p>
-          <div class="quick-filters" id="quick-filters"></div>
+          <button class="btn btn-ghost btn-sm filter-toggle" type="button" id="toggle-filters" aria-expanded="false">Mostra filtri</button>
+          <div class="quick-filters collapsed" id="quick-filters"></div>
           <div class="cta">
             <p class="cta-note">
               Se non trovi il prodotto giusto, puoi chiedere informazioni per una stampa personalizzata
-              e richiedere una consulenza.
+              e guardare tra i lavori già realizzati.
             </p>
-            <button class="btn btn-primary btn-full js-open-custom" type="button">Richiesta personalizzata</button>
+            <div class="cta-buttons">
+              <button class="btn btn-primary js-open-custom" type="button">Richiesta personalizzata</button>
+              <a class="btn btn-primary" href="works.html">Lavori personalizzati</a>
+            </div>
           </div>
           <p class="muted filter-note" id="filter-note" hidden>
             Filtro attivo: <span id="filter-text"></span>

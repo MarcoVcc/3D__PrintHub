@@ -24,12 +24,5 @@
       { "name": "Rosso", "sample_image": "PLA_Rosso.jpg" },
       { "name": "Verde erba", "sample_image": "PLA_Verde_Erba.jpg" }
     ]
-  },
-  {
-    "name": "Resina",
-    "description": "Alta definizione per dettagli fini e superfici pulite.",
-    "colors": [
-      { "name": "Grigio pietra", "sample_image": "resina-grigio-pietra.svg" }
-    ]
   }
 ]

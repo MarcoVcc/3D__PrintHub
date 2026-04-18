@@ -2,7 +2,7 @@
   {
     "slug": "moon-lamp",
     "title": "Moon Lamp",
-    "category": "Casa e Ufficio",
+    "category": "Home Decor",
     "base_price": 28.0,
     "base_discount_price": null,
     "short_description": "Lampada decorativa effetto luna.",
@@ -48,7 +48,7 @@
   {
     "slug": "porta-bacchette",
     "title": "Porta Bacchette",
-    "category": "Casa e Ufficio",
+    "category": "Varie",
     "base_price": 14.0,
     "base_discount_price": null,
     "short_description": "Supporto da tavolo in stile minimal.",
@@ -89,7 +89,7 @@
   {
     "slug": "porta-spezie",
     "title": "Porta Spezie",
-    "category": "Casa e Ufficio",
+    "category": "Lavori Personalizzati",
     "base_price": 18.0,
     "base_discount_price": null,
     "short_description": "Organizzatore compatto per cucina.",
@@ -115,12 +115,12 @@
     "featured": false,
     "best_seller": false,
     "is_new": true,
-    "is_custom": false
+    "is_custom": true
   },
   {
     "slug": "stand-telefono",
     "title": "Stand Telefono",
-    "category": "Casa e Ufficio",
+    "category": "Lavori Personalizzati",
     "base_price": 17.0,
     "base_discount_price": 15.0,
     "short_description": "Supporto smartphone da scrivania in PLA multicolor.",
@@ -166,7 +166,7 @@
     "featured": false,
     "best_seller": false,
     "is_new": true,
-    "is_custom": false
+    "is_custom": true
   },
   {
     "slug": "crox-tpu",
@@ -227,7 +227,7 @@
   {
     "slug": "middle-finger",
     "title": "Middle Finger",
-    "category": "Lavori Personalizzati",
+    "category": "Varie",
     "base_price": null,
     "base_discount_price": null,
     "short_description": "Progetto dimostrativo stampato in PLA.",
@@ -273,7 +273,7 @@
     "featured": false,
     "best_seller": false,
     "is_new": false,
-    "is_custom": true
+    "is_custom": false
   },
   {
     "slug": "punta-albero-natale",
@@ -309,7 +309,7 @@
   {
     "slug": "scream",
     "title": "Scream",
-    "category": "Lavori Personalizzati",
+    "category": "Miniature",
     "base_price": null,
     "base_discount_price": null,
     "short_description": "Stampa multicolor dimostrativa.",
@@ -335,12 +335,12 @@
     "featured": false,
     "best_seller": false,
     "is_new": false,
-    "is_custom": true
+    "is_custom": false
   },
   {
     "slug": "alexa-echo-dot-dragon",
     "title": "Supporto Echo Dot Dragon",
-    "category": "Lavori Personalizzati",
+    "category": "Home Decor",
     "base_price": null,
     "base_discount_price": null,
     "short_description": "Supporto artistico personalizzato per Echo Dot.",
@@ -371,12 +371,12 @@
     "featured": false,
     "best_seller": false,
     "is_new": true,
-    "is_custom": true
+    "is_custom": false
   },
   {
     "slug": "buongiorno-un-cazzo",
     "title": "Targa Buongiorno un Cazzo",
-    "category": "Lavori Personalizzati",
+    "category": "Varie",
     "base_price": null,
     "base_discount_price": null,
     "short_description": "Targa personalizzata su richiesta.",
@@ -412,12 +412,12 @@
     "featured": false,
     "best_seller": false,
     "is_new": false,
-    "is_custom": true
+    "is_custom": false
   },
   {
     "slug": "litofania-personalizzata",
     "title": "Litofania Personalizzata",
-    "category": "Litofanie",
+    "category": "Home Decor",
     "base_price": 35.0,
     "base_discount_price": 30.0,
     "short_description": "Litofania personalizzata retroilluminata.",
@@ -580,7 +580,7 @@
   {
     "slug": "umarell-low-poly",
     "title": "Umarell Low Poly",
-    "category": "Miniature",
+    "category": "Home Decor",
     "base_price": 18.0,
     "base_discount_price": null,
     "short_description": "Stile low poly, look moderno da scrivania.",
@@ -616,7 +616,7 @@
   {
     "slug": "umarell-realistico",
     "title": "Umarell Realistico",
-    "category": "Miniature",
+    "category": "Home Decor",
     "base_price": 19.0,
     "base_discount_price": null,
     "short_description": "Miniatura stilizzata con posa caratteristica.",
@@ -652,7 +652,7 @@
   {
     "slug": "ford-gt40",
     "title": "Ford GT40",
-    "category": "Modellismo",
+    "category": "Miniature",
     "base_price": 55.0,
     "base_discount_price": null,
     "short_description": "Modello da esposizione in PLA multicolor.",
@@ -693,7 +693,7 @@
   {
     "slug": "flexi-drago-portachiavi",
     "title": "Flexi Drago Portachiavi",
-    "category": "Portachiavi",
+    "category": "Varie",
     "base_price": 11.0,
     "base_discount_price": 9.5,
     "short_description": "Portachiavi snodato dual color.",
@@ -740,7 +740,7 @@
   {
     "slug": "cartello-fanculo",
     "title": "Cartello Fanculo",
-    "category": "Regali",
+    "category": "Varie",
     "base_price": 12.0,
     "base_discount_price": null,
     "short_description": "Oggetto ironico da scrivania.",
@@ -776,7 +776,7 @@
   {
     "slug": "rosa-decorativa-pla",
     "title": "Rosa Decorativa PLA",
-    "category": "Regali",
+    "category": "Home Decor",
     "base_price": 16.0,
     "base_discount_price": null,
     "short_description": "Rosa decorativa disponibile in rosso e nero opaco.",
@@ -833,7 +833,7 @@
   {
     "slug": "mini-presepe",
     "title": "Mini Presepe",
-    "category": "Stagionali",
+    "category": "Miniature",
     "base_price": 22.0,
     "base_discount_price": null,
     "short_description": "Decorazione natalizia in PLA silk argento.",

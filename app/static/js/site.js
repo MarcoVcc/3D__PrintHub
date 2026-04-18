@@ -256,9 +256,28 @@
     return window.confirm(message);
   }
 
+  function getInstagramAppUrl(site) {
+    const usernameMatch = (site.instagram_url || site.instagram_dm_url || "").match(/instagram\.com\/(?:_u\/|p\/|stories\/|direct\/|tv\/)?([a-zA-Z0-9._]+)/i);
+    if (usernameMatch) {
+      return `instagram://user?username=${usernameMatch[1]}`;
+    }
+    return "instagram://";
+  }
+
   function openInstagram(site) {
-    const url = site.instagram_dm_url || site.instagram_url || "https://instagram.com";
-    window.open(url, "_blank", "noopener");
+    const webUrl = site.instagram_dm_url || site.instagram_url || "https://instagram.com";
+    const appUrl = site.instagram_app_url || getInstagramAppUrl(site);
+
+    let didOpenApp = false;
+    const fallback = () => {
+      if (!didOpenApp) {
+        didOpenApp = true;
+        window.location.href = webUrl;
+      }
+    };
+
+    window.location.href = appUrl;
+    setTimeout(fallback, 600);
   }
 
   function setupModal(modalId, openSelector) {
@@ -495,15 +514,37 @@
     if (materialSelect) materialSelect.addEventListener("change", onChange);
   }
 
+  function setupFilterToggle() {
+    const toggle = qs("#toggle-filters");
+    const filters = qs("#quick-filters");
+    if (!toggle || !filters) return;
+
+    const updateText = () => {
+      const collapsed = filters.classList.contains("collapsed");
+      toggle.textContent = collapsed ? "Mostra filtri" : "Nascondi filtri";
+      toggle.setAttribute("aria-expanded", String(!collapsed));
+    };
+
+    toggle.addEventListener("click", () => {
+      filters.classList.toggle("collapsed");
+      updateText();
+    });
+
+    filters.classList.add("collapsed");
+    updateText();
+  }
+
   function renderProductsPage(products, material, category) {
     const container = qs("#products-content");
     if (!container) return;
     const saleProducts = getSaleProducts(products);
-    renderQuickFilters(saleProducts, category, material);
-    let filtered = saleProducts;
+    const visibleProducts = saleProducts.filter((product) => product.category !== "Lavori Personalizzati");
+    renderQuickFilters(visibleProducts, category, material);
+    setupFilterToggle();
+    let filtered = visibleProducts;
 
     if (category || material) {
-      filtered = saleProducts.filter((product) => {
+      filtered = visibleProducts.filter((product) => {
         const categoryOk = !category || product.category === category;
         if (!categoryOk) return false;
         if (!material) return true;
@@ -800,6 +841,8 @@
 
     buildPriceBlock(product, priceBlock);
     if (stickyCta) stickyCta.hidden = Boolean(product.is_custom);
+    const reviewsSection = qs(".reviews");
+    if (reviewsSection) reviewsSection.hidden = Boolean(product.is_custom);
 
     const images = (product.images || []).map((img) => ({
       src: `${ASSET_DIR}/catalog/${img.file}`,
@@ -1217,7 +1260,9 @@
 
     updateImage();
 
-    renderReviews(product.slug, reviews);
+    if (!product.is_custom) {
+      renderReviews(product.slug, reviews);
+    }
     renderRelatedProducts();
 
     if (!product.is_custom) {
