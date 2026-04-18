@@ -402,7 +402,7 @@
     }
   }
 
-  function renderProductCard(product) {
+  function renderProductCard(product, site) {
     const firstImage = product.images && product.images.length ? product.images[0] : null;
     const img = firstImage
       ? buildOptimizedImageMarkup("catalog", firstImage.file, product.title, {
@@ -418,7 +418,7 @@
          <span class="price-current">${formatPrice(product.base_discount_price)}</span>
          <span class="price-discount">-${Math.round((1 - product.base_discount_price / product.base_price) * 100)}%</span>`
       : `<span class="price-current">${formatPrice(product.base_price)}</span>`;
-    const badge = !isCustom && product.availability
+    const badge = !isCustom && site.show_badges && (product.availability === "Disponibile" || product.availability === "Su ordinazione")
       ? `<span class="badge ${product.availability === "Disponibile" ? "badge-available" : "badge-order"}">${product.availability}</span>`
       : "";
     const priceBlock = !isCustom
@@ -436,7 +436,6 @@
             <h3>${product.title}</h3>
             ${priceBlock}
           </div>
-          <p>${product.short_description || ""}</p>
           ${metaBlock}
         </div>
       </a>
@@ -508,7 +507,7 @@
       const nextCategory = categorySelect ? categorySelect.value : "";
       const nextMaterial = materialSelect ? materialSelect.value : "";
       updateProductsQuery(nextCategory, nextMaterial);
-      renderProductsPage(products, nextMaterial, nextCategory);
+      renderProductsPage(products, nextMaterial, nextCategory, site);
     };
     if (categorySelect) categorySelect.addEventListener("change", onChange);
     if (materialSelect) materialSelect.addEventListener("change", onChange);
@@ -534,7 +533,7 @@
     updateText();
   }
 
-  function renderProductsPage(products, material, category) {
+  function renderProductsPage(products, material, category, site) {
     const container = qs("#products-content");
     if (!container) return;
     const saleProducts = getSaleProducts(products);
@@ -562,7 +561,7 @@
     const categories = Object.keys(grouped);
 
     const sections = categories.map((category) => {
-      const cards = grouped[category].map(renderProductCard).join("");
+      const cards = grouped[category].map(product => renderProductCard(product, site)).join("");
       return `
         <section class="category">
           <div class="container">
@@ -612,7 +611,7 @@
     setupCategoryCarousels();
   }
 
-  function renderWorksPage(products) {
+  function renderWorksPage(products, site) {
     const container = qs("#works-content");
     if (!container) return;
     const customProducts = getCustomProducts(products);
@@ -628,7 +627,7 @@
       return;
     }
 
-    const cards = customProducts.map(renderProductCard).join("");
+    const cards = customProducts.map(product => renderProductCard(product, site)).join("");
     container.innerHTML = `
       <section class="category">
         <div class="container">
@@ -825,10 +824,12 @@
     availabilityText.textContent = product.availability || "";
     shippingNote.textContent = product.shipping_note || "";
 
-    if (product.availability) {
+    if (site.show_badges && (product.availability === "Disponibile" || product.availability === "Su ordinazione")) {
       availabilityBadge.textContent = product.availability;
       availabilityBadge.hidden = false;
       availabilityBadge.classList.add(product.availability === "Disponibile" ? "badge-available" : "badge-order");
+    } else {
+      availabilityBadge.hidden = true;
     }
 
     if (product.availability && product.availability !== "Disponibile") {
@@ -1253,7 +1254,7 @@
         return;
       }
 
-      track.innerHTML = related.map(renderProductCard).join("");
+      track.innerHTML = related.map(product => renderProductCard(product, site)).join("");
       section.hidden = false;
       setupCategoryCarousels();
     }
@@ -1395,12 +1396,12 @@
       const params = new URLSearchParams(window.location.search);
       const material = params.get("material");
       const category = params.get("category");
-      renderProductsPage(products, material, category);
+      renderProductsPage(products, material, category, site);
     }
 
     if (page === "works") {
       const products = await getCatalog();
-      renderWorksPage(products);
+      renderWorksPage(products, site);
     }
 
     if (page === "materials") {

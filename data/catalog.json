@@ -176,7 +176,7 @@
     "base_discount_price": null,
     "short_description": "Esempio di stampa complessa in TPU.",
     "description": "Stampa dimostrativa in TPU per mostrare le possibilita con materiali flessibili.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "Variabili",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -205,7 +205,7 @@
     "base_discount_price": null,
     "short_description": "Progetto su misura per negozi e brand.",
     "description": "Insegna luminosa realizzata su richiesta con dimensioni e materiali personalizzati.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "Su misura",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -232,7 +232,7 @@
     "base_discount_price": null,
     "short_description": "Progetto dimostrativo stampato in PLA.",
     "description": "Esempio di stampa personalizzata per mostrare finiture e dettagli.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "9 x 5 x 12 cm",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -283,7 +283,7 @@
     "base_discount_price": null,
     "short_description": "Decorazione natalizia su misura.",
     "description": "Progetto personalizzato per decorazioni natalizie, mostrato a titolo di esempio.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "15 x 15 x 22 cm",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -314,7 +314,7 @@
     "base_discount_price": null,
     "short_description": "Stampa multicolor dimostrativa.",
     "description": "Esempio di stampa multicolor realizzata su richiesta.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "12 x 8 x 9 cm",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -345,7 +345,7 @@
     "base_discount_price": null,
     "short_description": "Supporto artistico personalizzato per Echo Dot.",
     "description": "Supporto decorativo per smart speaker, realizzato su richiesta.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "12 x 10 x 10 cm",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -381,7 +381,7 @@
     "base_discount_price": null,
     "short_description": "Targa personalizzata su richiesta.",
     "description": "Targa dimostrativa per mostrare progetti personalizzati in PLA.",
-    "availability": "Su richiesta",
+    "availability": "Su ordinazione",
     "dimensions": "20 x 8 cm",
     "shipping_time": "Da concordare",
     "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
@@ -765,6 +765,16 @@
         "file": "CartelloFanculo_PLA_Nero_2.jpg",
         "color": "Nero opaco",
         "material": "PLA"
+      },
+      {
+        "file": "CartelloFanculo_PLA_Nero_3.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "CartelloFanculo_PLA_Nero_4.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
       }
     ],
     "price_variants": [],
@@ -852,6 +862,405 @@
       {
         "file": "MiniPresepe_PLA_Argento_1.jpg",
         "color": "Argento",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "articulated-seal",
+    "title": "Foca Articolata",
+    "category": "Miniature",
+    "base_price": 15.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di foca articolata.",
+    "description": "Miniatura dettagliata di foca con articolazioni mobili.",
+    "availability": "Su ordinazione",
+    "dimensions": "8 x 4 x 6 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "ArticulatedSeal_PLA_Black_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ArticulatedSeal_PLA_Black_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ArticulatedSeal_PLA_Black_3.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ArticulatedSeal_PLA_Black_4.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ArticulatedSeal_PLA_Black_5.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ArticulatedSeal_PLA_Black_6.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "bathroom-accessory",
+    "title": "Accessorio Bagno",
+    "category": "Home Decor",
+    "base_price": 12.0,
+    "base_discount_price": null,
+    "short_description": "Accessorio decorativo per bagno.",
+    "description": "Oggetto decorativo funzionale per il bagno.",
+    "availability": "Su ordinazione",
+    "dimensions": "10 x 5 x 8 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "Bathroom_PLA_Black_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "Bathroom_PLA_Black_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "chubby-dino",
+    "title": "Dino Cicciotto",
+    "category": "Miniature",
+    "base_price": 18.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di dinosauro cicciotto.",
+    "description": "Miniatura carina di dinosauro paffuto.",
+    "availability": "Su ordinazione",
+    "dimensions": "6 x 6 x 8 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "ChubbyDino_PLA_Black_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "ChubbyDino_PLA_Black_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "knitted-polar-bear",
+    "title": "Orso Polare Maglione",
+    "category": "Miniature",
+    "base_price": 20.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di orso polare con maglione.",
+    "description": "Orso polare carino con maglione lavorato a maglia.",
+    "availability": "Su ordinazione",
+    "dimensions": "7 x 5 x 10 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "KnittedPolarBear_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedPolarBear_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedPolarBear_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedPolarBear_PLA_Multicolor_4.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "knitted-whale",
+    "title": "Balena Maglione",
+    "category": "Miniature",
+    "base_price": 22.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di balena con maglione.",
+    "description": "Balena adorabile con maglione lavorato a maglia.",
+    "availability": "Su ordinazione",
+    "dimensions": "12 x 6 x 8 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "KnittedWale_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedWale_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedWale_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "KnittedWale_PLA_Multicolor_4.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "light-saber",
+    "title": "Spada Laser",
+    "category": "Miniature",
+    "base_price": 25.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di spada laser Star Wars.",
+    "description": "Spada laser dettagliata con effetto luminoso.",
+    "availability": "Su ordinazione",
+    "dimensions": "30 x 3 x 3 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "LightSaber_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "LightSaber_PLA_Multicolor_2.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      },
+      {
+        "file": "LightSaber_PLA_Multicolor_3.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "photo-frame",
+    "title": "Cornice Foto",
+    "category": "Home Decor",
+    "base_price": 16.0,
+    "base_discount_price": null,
+    "short_description": "Cornice decorativa per foto.",
+    "description": "Cornice elegante per fotografie.",
+    "availability": "Su ordinazione",
+    "dimensions": "15 x 10 x 2 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Bianco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "PhotoFrame_PLA_White_1.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "PhotoFrame_PLA_White_2.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "PhotoFrame_PLA_White_3.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "PhotoFrame_PLA_White_4.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "PhotoFrame_PLA_White_5.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      },
+      {
+        "file": "PhotoFrame_PLA_White_6.jpg",
+        "color": "Bianco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "rough-elephant",
+    "title": "Elefante Ruvido",
+    "category": "Miniature",
+    "base_price": 14.0,
+    "base_discount_price": null,
+    "short_description": "Miniatura di elefante con texture ruvida.",
+    "description": "Elefante dettagliato con superficie irregolare.",
+    "availability": "Su ordinazione",
+    "dimensions": "10 x 8 x 12 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "RoughElephant_PLA_Black_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "RoughElephant_PLA_Black_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "RoughElephant_PLA_Black_3.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "RoughElephant_PLA_Black_4.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "RoughElephant_PLA_Black_5.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "albero-di-natale",
+    "title": "Albero di Natale",
+    "category": "Home Decor",
+    "base_price": 28.0,
+    "base_discount_price": null,
+    "short_description": "Decorazione natalizia in PLA.",
+    "description": "Albero di Natale decorativo stampato in 3D, ideale per decorazioni festive.",
+    "availability": "Su ordinazione",
+    "dimensions": "15 x 15 x 25 cm",
+    "shipping_time": "4-7 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Verde Blu"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "AlberoDiNatale_PLA_GreenBlue_1.jpg",
+        "color": "Verde Blu",
         "material": "PLA"
       }
     ],

@@ -4,6 +4,7 @@
   "contact_email": "3dprinthub.mv@gmail.com",
   "instagram_url": "https://www.instagram.com/3dprint__hub/",
   "instagram_dm_url": "https://ig.me/m/3dprint__hub",
+  "show_badges": false,
   "required_fields": {
     "custom_request": ["name", "contact", "description"],
     "availability_request": ["name", "email"]

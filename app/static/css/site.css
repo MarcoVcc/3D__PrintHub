@@ -168,11 +168,16 @@ body[data-page="products"] {
 }
 
 .page-head {
-  padding: 2.2rem 0 1rem;
+  padding: 1.5rem 0 1rem;
 }
 
 .page-head .container {
   position: relative;
+}
+
+.page-head h1 {
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
 }
 
 .filter-toggle {
@@ -233,6 +238,7 @@ body[data-page="products"] {
   margin: 0 0 0.75rem;
   color: var(--muted);
   max-width: 720px;
+  font-size: 0.9rem;
 }
 
 .quick-filters {
@@ -598,7 +604,7 @@ body[data-page="products"] {
 
 .card {
   background: var(--card);
-  border-radius: 14px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--border);
   display: flex;
