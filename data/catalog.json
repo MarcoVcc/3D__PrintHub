@@ -42,7 +42,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "porta-bacchette",
@@ -82,7 +83,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": false
+    "is_new": false,
+    "is_custom": false
   },
   {
     "slug": "porta-spezie",
@@ -112,7 +114,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "stand-telefono",
@@ -162,7 +165,254 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "crox-tpu",
+    "title": "Crox in TPU",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Esempio di stampa complessa in TPU.",
+    "description": "Stampa dimostrativa in TPU per mostrare le possibilita con materiali flessibili.",
+    "availability": "Su richiesta",
+    "dimensions": "Variabili",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [],
+    "materials": [
+      "TPU"
+    ],
+    "images": [
+      {
+        "file": "ph-gray.svg",
+        "color": "",
+        "material": "TPU"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false,
+    "is_custom": true
+  },
+  {
+    "slug": "insegna-luminosa",
+    "title": "Insegna Luminosa",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Progetto su misura per negozi e brand.",
+    "description": "Insegna luminosa realizzata su richiesta con dimensioni e materiali personalizzati.",
+    "availability": "Su richiesta",
+    "dimensions": "Su misura",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [],
+    "materials": [],
+    "images": [
+      {
+        "file": "ph-blue.svg",
+        "color": "",
+        "material": ""
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": true
+  },
+  {
+    "slug": "middle-finger",
+    "title": "Middle Finger",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Progetto dimostrativo stampato in PLA.",
+    "description": "Esempio di stampa personalizzata per mostrare finiture e dettagli.",
+    "availability": "Su richiesta",
+    "dimensions": "9 x 5 x 12 cm",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "MiddleFinger_PLA_Nero_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "MiddleFinger_PLA_Nero_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "MiddleFinger_PLA_Nero_3.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "MiddleFinger_PLA_Nero_4.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "MiddleFinger_PLA_Nero_5.PNG",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false,
+    "is_custom": true
+  },
+  {
+    "slug": "punta-albero-natale",
+    "title": "Punta Albero Natale",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Decorazione natalizia su misura.",
+    "description": "Progetto personalizzato per decorazioni natalizie, mostrato a titolo di esempio.",
+    "availability": "Su richiesta",
+    "dimensions": "15 x 15 x 22 cm",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [
+      "Argento"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "PuntaAlberoNatale_PLA_ArgentoSilk_1.jpg",
+        "color": "Argento",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false,
+    "is_custom": true
+  },
+  {
+    "slug": "scream",
+    "title": "Scream",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Stampa multicolor dimostrativa.",
+    "description": "Esempio di stampa multicolor realizzata su richiesta.",
+    "availability": "Su richiesta",
+    "dimensions": "12 x 8 x 9 cm",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [
+      "Multicolor"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "Scream_PLA_Multicolor_1.jpg",
+        "color": "Multicolor",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false,
+    "is_custom": true
+  },
+  {
+    "slug": "alexa-echo-dot-dragon",
+    "title": "Supporto Echo Dot Dragon",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Supporto artistico personalizzato per Echo Dot.",
+    "description": "Supporto decorativo per smart speaker, realizzato su richiesta.",
+    "availability": "Su richiesta",
+    "dimensions": "12 x 10 x 10 cm",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "AlexaEchoDotDragon_PLA_Nero_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "AlexaEchoDotDragon_PLA_Nero_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": true
+  },
+  {
+    "slug": "buongiorno-un-cazzo",
+    "title": "Targa Buongiorno un Cazzo",
+    "category": "Lavori Personalizzati",
+    "base_price": null,
+    "base_discount_price": null,
+    "short_description": "Targa personalizzata su richiesta.",
+    "description": "Targa dimostrativa per mostrare progetti personalizzati in PLA.",
+    "availability": "Su richiesta",
+    "dimensions": "20 x 8 cm",
+    "shipping_time": "Da concordare",
+    "shipping_note": "Nota: progetto personalizzato con tempi e costi da definire insieme.",
+    "colors": [
+      "Nero"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "BuongiornoUnCazzo_PLA_Nero_1.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "BuongiornoUnCazzo_PLA_Nero_2.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      },
+      {
+        "file": "BuongiornoUnCazzo_PLA_Nero_3.jpg",
+        "color": "Nero",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": false,
+    "is_custom": true
   },
   {
     "slug": "litofania-personalizzata",
@@ -212,7 +462,8 @@
     "price_variants": [],
     "featured": true,
     "best_seller": true,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "ironman-pla-rosso-nero",
@@ -247,12 +498,23 @@
         "file": "IronMan_PLA_RossoNero_3.jpg",
         "color": "Rosso",
         "material": "PLA"
+      },
+      {
+        "file": "IronMan_1.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "IronMan_2.jpg",
+        "color": "Rosso",
+        "material": "PLA"
       }
     ],
     "price_variants": [],
     "featured": true,
     "best_seller": true,
-    "is_new": false
+    "is_new": false,
+    "is_custom": false
   },
   {
     "slug": "sdentato-mini",
@@ -312,7 +574,44 @@
     "price_variants": [],
     "featured": true,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
+  },
+  {
+    "slug": "umarell-low-poly",
+    "title": "Umarell Low Poly",
+    "category": "Miniature",
+    "base_price": 18.0,
+    "base_discount_price": null,
+    "short_description": "Stile low poly, look moderno da scrivania.",
+    "description": "Miniatura Umarell in stile low poly, pensata come oggetto decorativo o regalo simpatico.",
+    "availability": "Disponibile",
+    "dimensions": "7 x 5 x 9 cm",
+    "shipping_time": "2-4 giorni lavorativi",
+    "shipping_note": "Nota: tempi da concordare in base alla disponibilita e alle mie tempistiche.",
+    "colors": [
+      "Nero opaco"
+    ],
+    "materials": [
+      "PLA"
+    ],
+    "images": [
+      {
+        "file": "UmarellLowPoly_PLA_Nero_1.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      },
+      {
+        "file": "UmarellLowPoly_PLA_Nero_2.jpg",
+        "color": "Nero opaco",
+        "material": "PLA"
+      }
+    ],
+    "price_variants": [],
+    "featured": false,
+    "best_seller": false,
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "umarell-realistico",
@@ -347,7 +646,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": false
+    "is_new": false,
+    "is_custom": false
   },
   {
     "slug": "ford-gt40",
@@ -387,7 +687,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "flexi-drago-portachiavi",
@@ -433,7 +734,8 @@
     "price_variants": [],
     "featured": true,
     "best_seller": true,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "cartello-fanculo",
@@ -468,7 +770,8 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "rosa-decorativa-pla",
@@ -509,12 +812,23 @@
         "file": "Rosa_1_rossa_2.jpg",
         "color": "Rosso",
         "material": "PLA"
+      },
+      {
+        "file": "Rosa_PLA_Rosso_1.jpg",
+        "color": "Rosso",
+        "material": "PLA"
+      },
+      {
+        "file": "Rosa_PLA_Rosso_2.jpg",
+        "color": "Rosso",
+        "material": "PLA"
       }
     ],
     "price_variants": [],
     "featured": true,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   },
   {
     "slug": "mini-presepe",
@@ -544,6 +858,7 @@
     "price_variants": [],
     "featured": false,
     "best_seller": false,
-    "is_new": true
+    "is_new": true,
+    "is_custom": false
   }
 ]

@@ -1706,3 +1706,14 @@ label span {
   font-size: 0.95rem;
   margin-top: 0.35rem;
 }
+
+body.is-custom .product-price-side,
+body.is-custom .product-info .price-block,
+body.is-custom .product-info .availability-inline,
+body.is-custom .product-sheet,
+body.is-custom .specs,
+body.is-custom .cta,
+body.is-custom #related-products,
+body.is-custom .product-sticky-cta {
+  display: none !important;
+}

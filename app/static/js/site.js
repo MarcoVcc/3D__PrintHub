@@ -38,6 +38,7 @@
   const qsa = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
 
   const formatPrice = (value) => `EUR ${Number(value).toFixed(2)}`;
+  const formatAvailability = (value) => value || "";
   const asString = (value) => (value === null || value === undefined ? "" : String(value));
   const escapeHtml = (value) =>
     asString(value)
@@ -46,6 +47,9 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
+  const isCustomProduct = (product) => Boolean(product && product.is_custom);
+  const getSaleProducts = (products) => (Array.isArray(products) ? products.filter((p) => !isCustomProduct(p)) : []);
+  const getCustomProducts = (products) => (Array.isArray(products) ? products.filter((p) => isCustomProduct(p)) : []);
 
   function buildOptimizedImageMarkup(folder, file, alt, options = {}) {
     if (!file) return `<div class="placeholder">Foto</div>`;
@@ -355,6 +359,13 @@
     const priceDiscount = qs("#price-discount", priceBlock);
     const basePrice = product.base_price;
     const baseDiscount = product.base_discount_price;
+    if (product.is_custom || basePrice == null) {
+      priceBlock.classList.remove("is-discounted");
+      priceOld.style.display = "none";
+      priceDiscount.style.display = "none";
+      priceCurrent.textContent = "Su richiesta";
+      return;
+    }
 
     if (baseDiscount && baseDiscount < basePrice) {
       priceBlock.classList.add("is-discounted");
@@ -381,15 +392,22 @@
           decoding: "async"
         })
       : `<div class="placeholder">Foto</div>`;
-    const hasDiscount = product.base_discount_price && product.base_discount_price < product.base_price;
+    const isCustom = product.is_custom;
+    const hasDiscount = !isCustom && product.base_discount_price && product.base_discount_price < product.base_price;
     const priceHtml = hasDiscount
       ? `<span class="price-old">${formatPrice(product.base_price)}</span>
          <span class="price-current">${formatPrice(product.base_discount_price)}</span>
          <span class="price-discount">-${Math.round((1 - product.base_discount_price / product.base_price) * 100)}%</span>`
       : `<span class="price-current">${formatPrice(product.base_price)}</span>`;
-    const badge = product.availability
+    const badge = !isCustom && product.availability
       ? `<span class="badge ${product.availability === "Disponibile" ? "badge-available" : "badge-order"}">${product.availability}</span>`
       : "";
+    const priceBlock = !isCustom
+      ? `<div class="price-block ${hasDiscount ? "is-discounted" : ""}">
+          ${priceHtml}
+        </div>`
+      : "";
+    const metaBlock = badge ? `<div class="card-meta">${badge}</div>` : "";
 
     return `
       <a class="card card-link" href="product.html?slug=${encodeURIComponent(product.slug)}">
@@ -397,12 +415,10 @@
         <div class="card-body">
           <div class="card-head">
             <h3>${product.title}</h3>
-            <div class="price-block ${hasDiscount ? "is-discounted" : ""}">
-              ${priceHtml}
-            </div>
+            ${priceBlock}
           </div>
           <p>${product.short_description || ""}</p>
-          <div class="card-meta">${badge}</div>
+          ${metaBlock}
         </div>
       </a>
     `;
@@ -482,11 +498,12 @@
   function renderProductsPage(products, material, category) {
     const container = qs("#products-content");
     if (!container) return;
-    renderQuickFilters(products, category, material);
-    let filtered = products;
+    const saleProducts = getSaleProducts(products);
+    renderQuickFilters(saleProducts, category, material);
+    let filtered = saleProducts;
 
     if (category || material) {
-      filtered = products.filter((product) => {
+      filtered = saleProducts.filter((product) => {
         const categoryOk = !category || product.category === category;
         if (!categoryOk) return false;
         if (!material) return true;
@@ -501,7 +518,9 @@
       grouped[key].push(product);
     });
 
-    const sections = Object.keys(grouped).map((category) => {
+    const categories = Object.keys(grouped);
+
+    const sections = categories.map((category) => {
       const cards = grouped[category].map(renderProductCard).join("");
       return `
         <section class="category">
@@ -548,6 +567,51 @@
     } else if (filterNote) {
       filterNote.hidden = true;
     }
+
+    setupCategoryCarousels();
+  }
+
+  function renderWorksPage(products) {
+    const container = qs("#works-content");
+    if (!container) return;
+    const customProducts = getCustomProducts(products);
+
+    if (!customProducts.length) {
+      container.innerHTML = `
+        <section class="category">
+          <div class="container">
+            <p class="muted">Nessun lavoro personalizzato pubblicato.</p>
+          </div>
+        </section>
+      `;
+      return;
+    }
+
+    const cards = customProducts.map(renderProductCard).join("");
+    container.innerHTML = `
+      <section class="category">
+        <div class="container">
+          <div class="category-head">
+            <h2>I miei lavori</h2>
+          </div>
+          <div class="category-carousel" data-product-carousel>
+            <button class="mini-scroll prev" type="button" aria-label="Scorri a sinistra" data-scroll="prev">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6"></path>
+              </svg>
+            </button>
+            <div class="product-track">
+              ${cards}
+            </div>
+            <button class="mini-scroll next" type="button" aria-label="Scorri a destra" data-scroll="next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 6l6 6-6 6"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    `;
 
     setupCategoryCarousels();
   }
@@ -606,11 +670,12 @@
     if (!container) return;
 
     function hasProducts(materialName, colorName) {
-      return products.some((product) =>
-        (product.images || []).some(
+      return products.some((product) => {
+        if (product.is_custom) return false;
+        return (product.images || []).some(
           (img) => img.material === materialName && img.color === colorName
-        )
-      );
+        );
+      });
     }
 
     container.innerHTML = materials.map((material) => {
@@ -684,6 +749,7 @@
   function renderProductPage(product, reviews, site, allProducts) {
     if (!product) return;
     document.title = `${product.title} - ${site.site_name || "3D__PrintHub"}`;
+    document.body.classList.toggle("is-custom", Boolean(product.is_custom));
 
     const availabilityBadge = qs("#product-availability");
     const availabilityText = qs("#product-availability-text");
@@ -733,7 +799,7 @@
     }
 
     buildPriceBlock(product, priceBlock);
-    if (stickyCta) stickyCta.hidden = false;
+    if (stickyCta) stickyCta.hidden = Boolean(product.is_custom);
 
     const images = (product.images || []).map((img) => ({
       src: `${ASSET_DIR}/catalog/${img.file}`,
@@ -962,6 +1028,13 @@
 
     function syncStickyPrice(price, discount) {
       if (!stickyPriceCurrent || !stickyPriceBlock) return;
+      if (product.is_custom || price == null) {
+        stickyPriceBlock.classList.remove("is-discounted");
+        if (stickyPriceOld) stickyPriceOld.style.display = "none";
+        if (stickyPriceDiscount) stickyPriceDiscount.style.display = "none";
+        stickyPriceCurrent.textContent = "Su richiesta";
+        return;
+      }
       if (discount && discount < price) {
         stickyPriceBlock.classList.add("is-discounted");
         if (stickyPriceOld) {
@@ -986,9 +1059,18 @@
       const priceOld = qs("#price-old");
       const priceCurrent = qs("#price-current");
       const priceDiscount = qs("#price-discount");
-      const price = priceValue || product.base_price;
-      const discount = discountValue || null;
-      if (discount && discount < price) {
+    const base = product.base_price;
+    const price = priceValue || base;
+    const discount = discountValue || null;
+    if (product.is_custom || base == null) {
+      priceBlock.classList.remove("is-discounted");
+      priceOld.style.display = "none";
+      priceDiscount.style.display = "none";
+      priceCurrent.textContent = "Su richiesta";
+      syncStickyPrice(base, discount);
+      return;
+    }
+    if (discount && discount < price) {
         priceBlock.classList.add("is-discounted");
         priceOld.style.display = "inline";
         priceOld.textContent = formatPrice(price);
@@ -1029,11 +1111,15 @@
         }
       }
 
-      const variant = getVariantMatch();
-      if (variant) {
-        setPriceDisplay(variant.price, variant.discount_price);
+      if (product.is_custom || product.base_price == null) {
+        setPriceDisplay(null, null);
       } else {
-        setPriceDisplay(product.base_price, product.base_discount_price);
+        const variant = getVariantMatch();
+        if (variant) {
+          setPriceDisplay(variant.price, variant.discount_price);
+        } else {
+          setPriceDisplay(product.base_price, product.base_discount_price);
+        }
       }
     }
 
@@ -1096,10 +1182,16 @@
       const track = qs("#related-track");
       if (!section || !track || !Array.isArray(allProducts)) return;
 
-      const sameCategory = allProducts.filter(
+      if (product.is_custom) {
+        section.hidden = true;
+        return;
+      }
+
+      const pool = allProducts.filter((item) => !item.is_custom);
+      const sameCategory = pool.filter(
         (item) => item.slug !== product.slug && item.category === product.category
       );
-      const fallback = allProducts.filter(
+      const fallback = pool.filter(
         (item) =>
           item.slug !== product.slug &&
           item.category !== product.category &&
@@ -1128,7 +1220,9 @@
     renderReviews(product.slug, reviews);
     renderRelatedProducts();
 
-    setupAvailabilityForm(site, product, () => selectedColor, () => selectedMaterial);
+    if (!product.is_custom) {
+      setupAvailabilityForm(site, product, () => selectedColor, () => selectedMaterial);
+    }
   }
 
   function renderReviews(slug, reviewsData) {
@@ -1228,13 +1322,14 @@
   }
 
   function initHomePage(products) {
-    const best = products.filter((p) => p.best_seller);
-    const newest = products.filter((p) => p.is_new);
+    const saleProducts = getSaleProducts(products);
+    const best = saleProducts.filter((p) => p.best_seller);
+    const newest = saleProducts.filter((p) => p.is_new);
     const bestGrid = qs("#best-seller-grid");
     const newGrid = qs("#new-entry-grid");
 
-    renderFeatured(bestGrid, best.length ? best : products.slice(0, 6));
-    renderFeatured(newGrid, newest.length ? newest : products.slice(-6));
+    renderFeatured(bestGrid, best.length ? best : saleProducts.slice(0, 6));
+    renderFeatured(newGrid, newest.length ? newest : saleProducts.slice(-6));
   }
 
   async function init() {
@@ -1256,6 +1351,11 @@
       const material = params.get("material");
       const category = params.get("category");
       renderProductsPage(products, material, category);
+    }
+
+    if (page === "works") {
+      const products = await getCatalog();
+      renderWorksPage(products);
     }
 
     if (page === "materials") {
