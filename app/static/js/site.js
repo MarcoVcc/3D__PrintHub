@@ -709,37 +709,17 @@
     const container = qs("#materials-list");
     if (!container) return;
 
-    function hasProducts(materialName, colorName) {
-      return products.some((product) => {
-        if (product.is_custom) return false;
-        return (product.images || []).some(
-          (img) => img.material === materialName && img.color === colorName
-        );
-      });
-    }
-
     container.innerHTML = materials.map((material) => {
       const colorRows = material.colors.map((color) => {
         const imgSrc = `${ASSET_DIR}/materials/${color.sample_image}`;
-        const swatchMarkup = buildOptimizedImageMarkup("materials", color.sample_image, color.name, {
-          webpFile: color.sample_webp_image,
-          loading: "lazy",
-          decoding: "async"
-        });
-        const hasProduct = hasProducts(material.name, color.name);
-        const link = hasProduct
-          ? `<a class="btn btn-ghost" href="products.html?material=${encodeURIComponent(material.name)}">Vedi prodotti</a>`
-          : `<span class="muted">Nessun prodotto</span>`;
         return `
           <div class="material-row">
-            <button class="material-swatch swatch-zoom" type="button" data-lightbox-src="${imgSrc}">
-              ${swatchMarkup}
-            </button>
+            <div class="material-swatch">
+              <img src="${imgSrc}" alt="${color.name}" loading="lazy" decoding="async">
+            </div>
             <div class="material-info">
               <strong>${color.name}</strong>
-              <span class="muted">Provino ${material.name}</span>
             </div>
-            <div class="material-action">${link}</div>
           </div>
         `;
       }).join("");
@@ -756,8 +736,6 @@
         </div>
       `;
     }).join("");
-
-    setupLightbox("#materials-lightbox", "#materials-lightbox-image");
   }
 
   function setupLightbox(lightboxId, imageId) {

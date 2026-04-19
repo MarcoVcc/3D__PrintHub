@@ -466,7 +466,69 @@ body[data-page="products"] {
 }
 
 .materials {
-  padding: 1.5rem 0 3rem;
+  padding: 1rem 0 1.5rem;
+}
+
+.materials-table {
+  padding: 1rem 0 1rem;
+  background: transparent;
+}
+
+.materials-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 0.75rem;
+}
+
+.materials-comparison-table th,
+.materials-comparison-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.materials-comparison-table th {
+  background: var(--bg-soft);
+  font-weight: 600;
+}
+
+.materials-comparison-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.materials-comparison-table thead th:first-child {
+  text-align: left;
+}
+
+.materials-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .materials-comparison-table {
+    font-size: 0.7rem;
+  }
+
+  .materials-comparison-table th,
+  .materials-comparison-table td {
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .materials-comparison-table {
+    font-size: 0.65rem;
+  }
+
+  .materials-comparison-table th,
+  .materials-comparison-table td {
+    padding: 0.3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -506,28 +568,28 @@ body[data-page="products"] {
 }
 
 .material-head h2 {
-  font-size: 1.02rem;
-  margin-bottom: 0.08rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.05rem;
 }
 
 .material-head p {
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   margin-bottom: 0;
 }
 
 .material-list {
   display: grid;
-  gap: 0.55rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .material-row {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.45rem;
+  gap: 0.15rem;
   align-items: start;
-  padding: 0.45rem;
-  border-radius: 12px;
+  padding: 0.1rem;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid var(--border);
 }
@@ -539,13 +601,18 @@ body[data-page="products"] {
   cursor: zoom-in;
 }
 
+.material-swatch {
+  display: block;
+  width: 100%;
+}
+
 .material-swatch img {
   width: 100%;
-  height: 92px;
+  aspect-ratio: 3 / 4;
   object-fit: contain;
   background: #f3f7fd;
-  padding: 0.16rem;
-  border-radius: 10px;
+  padding: 0.08rem;
+  border-radius: 6px;
   border: 1px solid var(--border);
 }
 
@@ -555,7 +622,8 @@ body[data-page="products"] {
 
 .material-info strong {
   display: block;
-  font-size: 0.84rem;
+  font-size: 0.65rem;
+  text-align: center;
 }
 
 .material-info .muted {

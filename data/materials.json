@@ -1,14 +1,8 @@
 [
   {
-    "name": "PETG",
-    "description": "Resistente agli urti e alle temperature: adatto per oggetti da uso quotidiano.",
-    "colors": [
-      { "name": "Nero opaco", "sample_image": "petg-nero-opaco.svg" }
-    ]
-  },
-  {
     "name": "PLA",
     "description": "Materiale versatile per decorazione e oggetti da interno, con ottima resa estetica.",
+    "properties": [],
     "colors": [
       { "name": "Nero opaco", "sample_image": "pla-nero-opaco.svg" },
       { "name": "Bianco opaco", "sample_image": "pla-bianco-opaco.svg" },
@@ -23,6 +17,30 @@
       { "name": "Rosa", "sample_image": "PLA_Rosa.jpg" },
       { "name": "Rosso", "sample_image": "PLA_Rosso.jpg" },
       { "name": "Verde erba", "sample_image": "PLA_Verde_Erba.jpg" }
+    ]
+  },
+  {
+    "name": "PETG",
+    "description": "Resistente agli urti e alle temperature: adatto per oggetti da uso quotidiano.",
+    "properties": [],
+    "colors": [
+      { "name": "Nero opaco", "sample_image": "petg-nero-opaco.svg" }
+    ]
+  },
+  {
+    "name": "TPU",
+    "description": "Materiale flessibile e resistente agli urti, ideale per oggetti che richiedono elasticità.",
+    "properties": [],
+    "colors": [
+      { "name": "Nero", "sample_image": "tpu-nero.svg" }
+    ]
+  },
+  {
+    "name": "ABS",
+    "description": "Materiale resistente e durevole, adatto per applicazioni industriali e prototipazione.",
+    "properties": [],
+    "colors": [
+      { "name": "Nero", "sample_image": "abs-nero.svg" }
     ]
   }
 ]
