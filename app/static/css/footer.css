@@ -1,0 +1,83 @@
+/* Footer organizzato per contenuti e contatti. */
+
+.footer {
+  border-top: 1px solid rgba(188, 210, 236, 0.36);
+  padding: 2rem 0;
+  background: rgba(44, 72, 106, 0.96);
+  color: #d9e7fa;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) repeat(2, minmax(160px, 0.8fr));
+  align-items: start;
+  gap: 1.5rem 2rem;
+}
+
+.footer-brand strong {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-size: 1.05rem;
+}
+
+.footer-group h2 {
+  margin: 0 0 0.65rem;
+  color: #f0f6ff;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+}
+
+.footer-links .link {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: #c6d7ef;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-links .link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer .tagline {
+  color: #9db4d2;
+}
+
+.tagline {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.3rem 1rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+body.is-custom .product-price-side,
+body.is-custom .product-info .price-block,
+body.is-custom .product-info .availability-inline,
+body.is-custom .product-sheet,
+body.is-custom .specs,
+body.is-custom .cta,
+body.is-custom #related-products,
+body.is-custom .product-sticky-cta {
+  display: none !important;
+}

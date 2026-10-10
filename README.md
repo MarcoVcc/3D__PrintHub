@@ -10,8 +10,13 @@ Questa versione e' **solo frontend**: nessun backend, nessun database server.
   - `static_app/data/catalog.json`
   - `static_app/data/materials.json`
   - `static_app/data/reviews.json`
-- La logica UI e' in `static_app/app/static/js/site.js`.
-- Lo stile e' in `static_app/app/static/css/site.css`.
+- L'entry point JavaScript e' `static_app/app/static/js/site.js`.
+- `core.js` contiene dati, helper e interazioni condivise.
+- `catalog.js` gestisce home, catalogo, lavori e materiali.
+- `product.js` gestisce la scheda prodotto, galleria e recensioni.
+- `cart.js` raccoglie prodotti e varianti per inviare una richiesta unica; il carrello resta salvato nel browser.
+- I fogli CSS sono separati per area e collegati dalle pagine in quest'ordine:
+  `site.css`, `catalog.css`, `content.css`, `cards.css`, `product.css`, `forms.css`, `cart.css`, `responsive.css`, `footer.css`.
 
 ### Pagine
 - Home: `static_app/index.html`
@@ -23,7 +28,7 @@ Questa versione e' **solo frontend**: nessun backend, nessun database server.
 
 ### Funzionalita principali attive
 - Catalogo per categorie con carousel.
-- Filtri rapidi in `Prodotti` (categoria/materiale/colore).
+- Filtri rapidi in `Prodotti` (categoria/materiale/colore), con filtri salvati nella query dell'URL.
 - Scheda prodotto con:
   - selezione colore/materiale,
   - cambio immagini,
@@ -31,8 +36,9 @@ Questa versione e' **solo frontend**: nessun backend, nessun database server.
   - mini-gallery,
   - swipe immagini,
   - sticky CTA in basso.
+- Carrello richieste con quantità e varianti, per chiedere la disponibilità di più prodotti insieme.
 - Sezione "Prodotti simili" sotto ogni scheda prodotto.
-- Materiali e colori con anteprima provini + link "Vedi prodotti" filtrati.
+- Materiali e colori con anteprima provini + link "Vedi prodotti" filtrati quando esistono prodotti abbinati.
 - Form richieste (email + Instagram con testo copiato in clipboard).
 
 ## 2) Guida Approfondita di Personalizzazione
@@ -66,7 +72,7 @@ Ogni prodotto ha questa struttura:
 {
   "slug": "moon-lamp",
   "title": "Moon Lamp",
-  "category": "Casa e Ufficio",
+  "category": "Home Decor",
   "base_price": 28.0,
   "base_discount_price": null,
   "short_description": "Lampada decorativa effetto luna.",
@@ -81,9 +87,9 @@ Ogni prodotto ha questa struttura:
     { "file": "MoonLamp_PLA_Bianco_1.jpg", "color": "Bianco", "material": "PLA" }
   ],
   "price_variants": [],
-  "featured": false,
   "best_seller": false,
-  "is_new": true
+  "is_new": true,
+  "is_custom": false
 }
 ```
 
@@ -130,6 +136,7 @@ Ogni colore ha:
 - opzionale: `sample_webp_image`
 
 Se il nome colore/materiale coincide con quello usato nel catalogo, il bottone "Vedi prodotti" filtra automaticamente i prodotti giusti.
+Il bottone compare solo quando nel catalogo esiste almeno un prodotto con quella coppia materiale/colore.
 
 ### E. Recensioni (inserimento manuale)
 File: `static_app/data/reviews.json`
@@ -141,8 +148,8 @@ Il sito statico **non** salva recensioni su file da browser.
 - Home: `static_app/index.html`
 - Prodotti: `static_app/products.html`
 - Scheda prodotto: `static_app/product.html`
-- Stile: `static_app/app/static/css/site.css`
-- Logica JS: `static_app/app/static/js/site.js`
+- Stile base: `static_app/app/static/css/site.css`; componenti: `catalog.css`, `content.css`, `cards.css`, `product.css`, `forms.css`, `cart.css`, `responsive.css`, `footer.css`.
+- Entry point JS: `static_app/app/static/js/site.js`; moduli: `core.js`, `catalog.js`, `product.js`, `cart.js`.
 
 ### G. Avvio locale e deploy
 Avvio locale:

@@ -1,0 +1,207 @@
+/* Pagine informative: materiali, FAQ e presentazione. */
+
+.materials {
+  padding: 1rem 0 1.5rem;
+}
+
+.materials-table {
+  padding: 1rem 0 1rem;
+  background: transparent;
+}
+
+.materials-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 0.75rem;
+}
+
+.materials-comparison-table th,
+.materials-comparison-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.materials-comparison-table th {
+  background: var(--bg-soft);
+  font-weight: 600;
+}
+
+.materials-comparison-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+
+.materials-comparison-table thead th:first-child {
+  text-align: left;
+}
+
+.materials-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+  .materials-comparison-table {
+    font-size: 0.7rem;
+  }
+
+  .materials-comparison-table th,
+  .materials-comparison-table td {
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .materials-comparison-table {
+    font-size: 0.65rem;
+  }
+
+  .materials-comparison-table th,
+  .materials-comparison-table td {
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .category {
+    padding: 0.9rem 0 1rem;
+  }
+
+  .category-head {
+    margin-bottom: 0.75rem;
+  }
+
+  .category-head h2 {
+    font-size: 1rem;
+  }
+
+  .product-track {
+    gap: 0.55rem;
+    padding: 0.15rem 0.1rem 0.3rem;
+  }
+
+  .product-track .card {
+    flex: 0 0 clamp(180px, 42vw, 230px);
+  }
+}
+
+.material-block {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.material-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  margin-bottom: 0.72rem;
+}
+
+.material-head h2 {
+  font-size: 0.95rem;
+  margin-bottom: 0.05rem;
+}
+
+.material-head p {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+}
+
+.material-list {
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.material-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem;
+  align-items: start;
+  padding: 0.1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid var(--border);
+}
+
+.swatch-zoom {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.material-swatch {
+  display: block;
+  width: 100%;
+}
+
+.material-swatch img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #f3f7fd;
+  padding: 0.08rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.material-swatch picture {
+  display: block;
+}
+
+.material-info strong {
+  display: block;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.material-info .muted {
+  font-size: 0.72rem;
+}
+
+.material-action {
+  text-align: left;
+}
+
+.material-action .btn {
+  padding: 0.34rem 0.72rem;
+  font-size: 0.74rem;
+  width: 100%;
+}
+
+.faq {
+  padding: 1.5rem 0 3rem;
+}
+
+.faq-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item h2 {
+  margin-bottom: 0.4rem;
+}
+
+.about {
+  padding: 1.5rem 0 3rem;
+}
+
+.about-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+

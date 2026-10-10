@@ -1,0 +1,248 @@
+/* Dettaglio prodotto e galleria immagini. */
+
+.product {
+  padding: 1.5rem 0 0.8rem;
+}
+
+.product-full {
+  min-height: calc(100vh - 140px);
+}
+
+.product-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.product-media,
+.product-info {
+  min-width: 0;
+}
+
+.product-info {
+  order: 1;
+}
+
+.product-media {
+  order: 2;
+}
+
+.gallery-placeholder {
+  height: 170px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px dashed var(--border);
+  background: #e5effc;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.gallery-placeholder[hidden] {
+  display: none;
+}
+
+.main-image img {
+  width: 100%;
+  max-height: min(52vh, 430px);
+  object-fit: contain;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  box-shadow: 0 18px 34px rgba(17, 38, 61, 0.16);
+  cursor: zoom-in;
+  display: block;
+}
+
+.main-image .gallery-placeholder {
+  height: min(52vh, 430px);
+}
+
+.image-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.9rem;
+  color: #8a4b15;
+}
+
+.mini-gallery {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+  margin-bottom: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.16rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mini-gallery-wrap {
+  position: relative;
+}
+
+.mini-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.mini-scroll {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 8px 20px var(--shadow);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.mini-scroll.prev {
+  left: -12px;
+}
+
+.mini-scroll.next {
+  right: -12px;
+}
+
+.category-carousel .mini-scroll.prev {
+  left: 8px;
+}
+
+.category-carousel .mini-scroll.next {
+  right: 8px;
+}
+
+.mini-scroll svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mini-scroll:disabled {
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+}
+
+.mini-gallery-wrap:hover .mini-scroll,
+.mini-gallery-wrap:focus-within .mini-scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mini-gallery-wrap .mini-scroll {
+  display: none !important;
+}
+
+.category-carousel:hover .mini-scroll,
+.category-carousel:focus-within .mini-scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mini-thumb {
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f3f7fd;
+  cursor: pointer;
+  flex: 0 0 72px;
+  height: 56px;
+  opacity: 0.85;
+  transition: transform 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
+}
+
+.mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mini-thumb.is-active {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(47, 142, 219, 0.32);
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.28rem;
+  margin-bottom: 0.8rem;
+}
+
+.gallery-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(18, 36, 58, 0.32);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.gallery-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.18);
+}
+
+.product-top-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.product-price-side {
+  display: grid;
+  gap: 0.2rem;
+  justify-items: end;
+  min-width: max-content;
+}
+
+.product-price-side .price-block {
+  justify-content: flex-end;
+}
+
+.availability-inline {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.44rem;
+}
+
+.product-short {
+  margin: 0.35rem 0 0.45rem;
+  font-size: 0.9rem;
+}
+
+.product-info h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.related-products {
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.related-products .section-head {
+  margin-bottom: 0.7rem;
+}
+

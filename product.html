@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app/static/css/site.css">
+    <link rel="stylesheet" href="app/static/css/catalog.css">
+    <link rel="stylesheet" href="app/static/css/content.css">
+    <link rel="stylesheet" href="app/static/css/cards.css">
+    <link rel="stylesheet" href="app/static/css/product.css">
+    <link rel="stylesheet" href="app/static/css/forms.css">
+    <link rel="stylesheet" href="app/static/css/cart.css">
+    <link rel="stylesheet" href="app/static/css/responsive.css">
+    <link rel="stylesheet" href="app/static/css/footer.css">
   </head>
   <body data-page="product">
     <header class="topbar">
@@ -40,14 +48,23 @@
             <div class="gallery-dots" id="gallery-dots" hidden></div>
 
             <div class="specs">
-              <div class="option-group">
-                <h3>Colori</h3>
+              <div class="option-group" id="color-option-group" role="group" aria-labelledby="color-option-title">
+                <div class="option-heading">
+                  <h3 id="color-option-title"><span class="option-step">1</span>Scegli il colore</h3>
+                  <span class="option-required">Richiesto</span>
+                </div>
+                <p class="option-selection-state" id="color-selection-state">Seleziona un colore</p>
                 <div class="chips" id="color-chips"></div>
               </div>
-              <div class="option-group">
-                <h3>Materiali</h3>
+              <div class="option-group" id="material-option-group" role="group" aria-labelledby="material-option-title">
+                <div class="option-heading">
+                  <h3 id="material-option-title"><span class="option-step">2</span>Scegli il materiale</h3>
+                  <span class="option-required">Richiesto</span>
+                </div>
+                <p class="option-selection-state" id="material-selection-state">Seleziona un materiale</p>
                 <div class="chips" id="material-chips"></div>
               </div>
+              <p class="variant-selection-status" id="variant-selection-status" role="status" aria-live="polite">Scegli un colore e un materiale per aggiungere il prodotto al carrello.</p>
             </div>
 
             <div class="product-sheet">
@@ -70,7 +87,7 @@
             </div>
 
             <div class="cta">
-              <button class="btn btn-primary js-open-availability" type="button">Invia richiesta disponibilita</button>
+              <button class="btn btn-primary product-add-to-cart" type="button" data-add-to-cart aria-describedby="variant-selection-status" disabled>Aggiungi al carrello</button>
             </div>
 
             <div class="reviews reviews-inline">
@@ -132,57 +149,37 @@
             <span id="sticky-price-current" class="price-current">EUR 0.00</span>
             <span id="sticky-price-discount" class="price-discount" style="display:none;"></span>
           </div>
+          <span class="product-sticky-selection-hint" id="sticky-selection-hint">Seleziona colore e materiale</span>
         </div>
-        <button class="btn btn-primary js-open-availability" type="button">Richiedi disponibilita</button>
+        <button class="btn btn-primary product-add-to-cart" type="button" data-add-to-cart aria-describedby="variant-selection-status" disabled>Aggiungi al carrello</button>
       </div>
     </div>
 
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div>
+          <div class="footer-brand">
             <strong data-site-name>3D__PrintHub</strong>
             <span class="tagline" data-site-tagline></span>
           </div>
-          <div class="footer-links">
-            <a class="link" href="about.html">Chi sono</a>
-            <a class="link" href="faq.html">FAQ</a>
-            <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="link" data-site-email href="#" target="_blank" rel="noopener">Email</a>
-          </div>
+          <section class="footer-group">
+            <h2>Informazioni</h2>
+            <nav class="footer-links" aria-label="Informazioni">
+              <a class="link" href="about.html">Chi sono</a>
+              <a class="link" href="faq.html">FAQ e spedizioni</a>
+              <a class="link" href="materials.html">Materiali e colori</a>
+            </nav>
+          </section>
+          <section class="footer-group">
+            <h2>Contatti</h2>
+            <nav class="footer-links" aria-label="Contatti">
+              <a class="link" data-site-email href="#">Scrivi via email</a>
+              <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+            </nav>
+          </section>
         </div>
       </div>
     </footer>
-
-    <div class="modal" id="availability-modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close></div>
-      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="availability-title">
-        <button class="modal-close" type="button" data-close aria-label="Chiudi">x</button>
-        <h2 id="availability-title">Richiesta disponibilita</h2>
-        <p class="modal-subtitle">Chiedi conferma per prodotto, colore e materiale selezionati.</p>
-        <form class="custom-form" id="availability-form">
-          <div class="form-grid">
-            <label>
-              <span>Nome</span>
-              <input class="input" type="text" name="name" required>
-            </label>
-            <label>
-              <span>Email</span>
-              <input class="input" type="email" name="email" required>
-            </label>
-          </div>
-          <label>
-            <span>Note</span>
-            <textarea class="input input-textarea" name="notes" placeholder="Es. quantita, tempi, dettagli"></textarea>
-          </label>
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit" data-channel="email">Invia via email</button>
-            <button class="btn btn-ghost" type="button" data-channel="instagram">Invia via Instagram</button>
-          </div>
-          <p class="muted" id="availability-status" hidden>Richiesta inviata.</p>
-        </form>
-      </div>
-    </div>
 
     <div class="lightbox" id="product-lightbox">
       <div class="lightbox-backdrop" data-close></div>
@@ -261,7 +258,7 @@
       </div>
     </div>
 
-    <script src="app/static/js/site.js" defer></script>
+    <script type="module" src="app/static/js/site.js"></script>
   </body>
 </html>
 

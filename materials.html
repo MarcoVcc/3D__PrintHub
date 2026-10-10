@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app/static/css/site.css">
+    <link rel="stylesheet" href="app/static/css/catalog.css">
+    <link rel="stylesheet" href="app/static/css/content.css">
+    <link rel="stylesheet" href="app/static/css/cards.css">
+    <link rel="stylesheet" href="app/static/css/product.css">
+    <link rel="stylesheet" href="app/static/css/forms.css">
+    <link rel="stylesheet" href="app/static/css/cart.css">
+    <link rel="stylesheet" href="app/static/css/responsive.css">
+    <link rel="stylesheet" href="app/static/css/footer.css">
   </head>
   <body data-page="materials">
     <header class="topbar">
@@ -50,38 +58,38 @@
               <tbody>
                 <tr>
                   <td><strong>Resistenza</strong></td>
-                  <td>🟡🟡</td>
-                  <td>🟢🟢🟢</td>
-                  <td>🟢🟢🟢</td>
-                  <td>🟡🟡</td>
+                  <td>Media</td>
+                  <td>Alta</td>
+                  <td>Alta</td>
+                  <td>Media</td>
                 </tr>
                 <tr>
-                  <td><strong>Flessibilità</strong></td>
-                  <td>🔴</td>
-                  <td>🟡🟡</td>
-                  <td>🟡🟡</td>
-                  <td>🟢🟢🟢</td>
+                  <td><strong>Flessibilit&agrave;</strong></td>
+                  <td>Bassa</td>
+                  <td>Media</td>
+                  <td>Media</td>
+                  <td>Alta</td>
                 </tr>
                 <tr>
                   <td><strong>Resistenza al calore</strong></td>
-                  <td>🔴</td>
-                  <td>🟡🟡</td>
-                  <td>🟢🟢🟢</td>
-                  <td>🟡🟡</td>
+                  <td>Bassa</td>
+                  <td>Media</td>
+                  <td>Alta</td>
+                  <td>Media</td>
                 </tr>
                 <tr>
-                  <td><strong>Facilità di stampa</strong></td>
-                  <td>🟢🟢🟢</td>
-                  <td>🟢🟢</td>
-                  <td>🔴</td>
-                  <td>🔴</td>
+                  <td><strong>Facilit&agrave; di stampa</strong></td>
+                  <td>Alta</td>
+                  <td>Media</td>
+                  <td>Bassa</td>
+                  <td>Bassa</td>
                 </tr>
                 <tr>
                   <td><strong>Livello di dettaglio</strong></td>
-                  <td>🟢🟢🟢</td>
-                  <td>🟢🟢</td>
-                  <td>🟡🟡</td>
-                  <td>🔴</td>
+                  <td>Alta</td>
+                  <td>Media</td>
+                  <td>Media</td>
+                  <td>Bassa</td>
                 </tr>
                 <tr>
                   <td><strong>Uso consigliato</strong></td>
@@ -92,6 +100,7 @@
                 </tr>
               </tbody>
             </table>
+          <p class="muted">Valori indicativi: la resa pu&ograve; variare in base alla stampa e al modello.</p>
           </div>
         </div>
       </section>
@@ -107,16 +116,25 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div>
+          <div class="footer-brand">
             <strong data-site-name>3D__PrintHub</strong>
             <span class="tagline" data-site-tagline></span>
           </div>
-          <div class="footer-links">
-            <a class="link" href="about.html">Chi sono</a>
-            <a class="link" href="faq.html">FAQ</a>
-            <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="link" data-site-email href="#" target="_blank" rel="noopener">Email</a>
-          </div>
+          <section class="footer-group">
+            <h2>Informazioni</h2>
+            <nav class="footer-links" aria-label="Informazioni">
+              <a class="link" href="about.html">Chi sono</a>
+              <a class="link" href="faq.html">FAQ e spedizioni</a>
+              <a class="link" href="materials.html">Materiali e colori</a>
+            </nav>
+          </section>
+          <section class="footer-group">
+            <h2>Contatti</h2>
+            <nav class="footer-links" aria-label="Contatti">
+              <a class="link" data-site-email href="#">Scrivi via email</a>
+              <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+            </nav>
+          </section>
         </div>
       </div>
     </footer>
@@ -129,7 +147,7 @@
       </div>
     </div>
 
-    <script src="app/static/js/site.js" defer></script>
+    <script type="module" src="app/static/js/site.js"></script>
   </body>
 </html>
 

@@ -1,0 +1,277 @@
+/* Adattamenti responsive e interazioni touch. */
+
+@media (max-width: 900px) {
+  .topbar .container {
+    padding: 0.48rem 0;
+    gap: 0.38rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    position: relative;
+  }
+
+  .brand {
+    font-size: 1.02rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.34rem;
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(188, 210, 236, 0.38);
+    background: rgba(50, 79, 113, 0.97);
+    box-shadow: 0 14px 30px var(--shadow);
+    z-index: 20;
+  }
+
+  .topbar.is-open .nav {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.55rem;
+    border-radius: 8px;
+    border: 1px solid rgba(188, 210, 236, 0.28);
+    background: rgba(255, 255, 255, 0.14);
+    color: #d7e6fa;
+  }
+
+  .price-block {
+    justify-content: flex-start;
+  }
+
+  .grid-products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-track .card {
+    flex-basis: min(34vw, 140px);
+  }
+
+  .category-carousel::before,
+  .category-carousel::after {
+    width: 14px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .material-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info {
+    order: 1;
+  }
+
+  .product-media {
+    order: 2;
+  }
+
+  .product-info h1 {
+    font-size: 1.03rem;
+  }
+
+  .quick-filter-label {
+    font-size: 0.66rem;
+  }
+
+  .quick-filter-row {
+    gap: 0.42rem;
+  }
+
+  .quick-select {
+    font-size: 0.74rem;
+    padding: 0.4rem 0.52rem;
+  }
+
+  .product-short {
+    font-size: 0.83rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .product-price-side .price-block {
+    gap: 0.2rem;
+  }
+
+  .product-price-side .price-current {
+    font-size: 0.9rem;
+  }
+
+  .product-price-side .price-old {
+    font-size: 0.64rem;
+  }
+
+  .product-price-side .price-discount {
+    font-size: 0.58rem;
+    padding: 0.04rem 0.2rem;
+  }
+
+  .availability-inline {
+    font-size: 0.62rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .main-image img {
+    max-height: min(44vh, 320px);
+  }
+
+  .main-image .gallery-placeholder {
+    height: min(44vh, 320px);
+  }
+
+  .mini-gallery {
+    gap: 0.42rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .mini-thumb {
+    flex-basis: 64px;
+    height: 48px;
+  }
+
+  .mini-thumb img {
+    height: 100%;
+  }
+
+  .gallery-dot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .card-body {
+    padding: 0.42rem 0.5rem 0.48rem;
+  }
+
+  .card-head h3 {
+    font-size: 0.74rem;
+    line-height: 1.15;
+  }
+
+  .card p {
+    font-size: 0.67rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card .price-current {
+    font-size: 0.74rem;
+  }
+
+  .card .price-old {
+    font-size: 0.54rem;
+  }
+
+  .card .price-discount {
+    font-size: 0.5rem;
+    padding: 0.03rem 0.16rem;
+  }
+
+  .featured-title {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.42rem 0.34rem;
+  }
+
+  .card-meta .badge {
+    font-size: 0.58rem;
+    padding: 0.12rem 0.35rem;
+  }
+
+  .product-sheet {
+    padding: 0.62rem;
+  }
+
+  .reviews {
+    margin-top: 0.62rem;
+  }
+
+  .review-card {
+    padding: 0.62rem;
+  }
+
+  .review-image-button {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+  }
+
+  .review-image-button img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .material-row {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .material-action {
+    text-align: left;
+  }
+
+  .product-sticky-cta {
+    padding-top: 0.4rem;
+    padding-bottom: calc(0.45rem + env(safe-area-inset-bottom));
+  }
+
+  .product-sticky-price .price-current {
+    font-size: 0.92rem;
+  }
+
+  .product-sticky-inner .btn {
+    padding: 0.48rem 0.82rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .material-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.36rem;
+  }
+
+  .material-row {
+    padding: 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .material-swatch img {
+    height: 62px;
+  }
+
+  .material-info strong {
+    font-size: 0.72rem;
+  }
+
+  .material-info .muted {
+    font-size: 0.62rem;
+  }
+
+  .material-action .btn {
+    font-size: 0.64rem;
+    padding: 0.24rem 0.4rem;
+  }
+}
+
+@media (hover: none) {
+  .category-carousel .mini-scroll {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

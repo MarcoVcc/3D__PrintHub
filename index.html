@@ -8,11 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app/static/css/site.css">
+    <link rel="stylesheet" href="app/static/css/catalog.css">
+    <link rel="stylesheet" href="app/static/css/content.css">
+    <link rel="stylesheet" href="app/static/css/cards.css">
+    <link rel="stylesheet" href="app/static/css/product.css">
+    <link rel="stylesheet" href="app/static/css/forms.css">
+    <link rel="stylesheet" href="app/static/css/cart.css">
+    <link rel="stylesheet" href="app/static/css/responsive.css">
+    <link rel="stylesheet" href="app/static/css/footer.css">
   </head>
   <body data-page="home">
     <header class="topbar">
       <div class="container">
-        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+        <a class="brand" href="index.html" data-site-name>3D__PrintHub</a>
+
         <button class="nav-toggle" type="button" aria-label="Apri menu" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
         <nav class="nav" id="site-nav">
           <a href="index.html">Home</a>
@@ -28,8 +37,7 @@
       <section class="cta-bar">
         <div class="container">
           <p class="cta-note">
-            Non trovi il prodotto che vorresti? Puoi chiedere informazioni per una stampa personalizzata
-            e richiedere una consulenza.
+            Non trovi il prodotto che vorresti? Puoi chiedere informazioni per una stampa personalizzata.
           </p>
           <button class="btn btn-primary btn-full js-open-custom" type="button">Richiesta personalizzata</button>
         </div>
@@ -57,16 +65,25 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div>
+          <div class="footer-brand">
             <strong data-site-name>3D__PrintHub</strong>
             <span class="tagline" data-site-tagline></span>
           </div>
-          <div class="footer-links">
-            <a class="link" href="about.html">Chi sono</a>
-            <a class="link" href="faq.html">FAQ</a>
-            <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="link" data-site-email href="#" target="_blank" rel="noopener">Email</a>
-          </div>
+          <section class="footer-group">
+            <h2>Informazioni</h2>
+            <nav class="footer-links" aria-label="Informazioni">
+              <a class="link" href="about.html">Chi sono</a>
+              <a class="link" href="faq.html">FAQ e spedizioni</a>
+              <a class="link" href="materials.html">Materiali e colori</a>
+            </nav>
+          </section>
+          <section class="footer-group">
+            <h2>Contatti</h2>
+            <nav class="footer-links" aria-label="Contatti">
+              <a class="link" data-site-email href="#">Scrivi via email</a>
+              <a class="link" data-site-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+            </nav>
+          </section>
         </div>
       </div>
     </footer>
@@ -140,7 +157,7 @@
       </div>
     </div>
 
-    <script src="app/static/js/site.js" defer></script>
+    <script type="module" src="app/static/js/site.js"></script>
   </body>
 </html>
 
