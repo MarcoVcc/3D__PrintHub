@@ -17,7 +17,7 @@ let items = loadCart();
 
 function loadCart() {
   try {
-    const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || "[]");
+    const saved = JSON.parse(window.sessionStorage.getItem(STORAGE_KEY) || "[]");
     if (!Array.isArray(saved)) return [];
     return saved
       .filter((item) => item && item.slug && item.title && item.color && item.material)
@@ -40,10 +40,16 @@ function loadCart() {
 
 function saveCart() {
   try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(items));
   } catch {
     // The current page can still use the in-memory cart if storage is unavailable.
   }
+}
+
+function clearCart() {
+  items = [];
+  saveCart();
+  renderCart();
 }
 
 function getModalMarkup() {
@@ -53,7 +59,6 @@ function getModalMarkup() {
       <div class="modal-card inquiry-cart-card" role="dialog" aria-modal="true" aria-labelledby="inquiry-cart-title">
         <button class="modal-close" type="button" data-close aria-label="Chiudi">×</button>
         <h2 id="inquiry-cart-title">Il tuo carrello</h2>
-        <p class="modal-subtitle">Raccogli più prodotti e chiedi la disponibilità con un solo messaggio.</p>
         <div class="inquiry-cart-items" id="inquiry-cart-items" aria-live="polite"></div>
         <form class="custom-form inquiry-cart-form" id="inquiry-cart-form">
           <div class="form-grid">
@@ -88,14 +93,15 @@ function renderCart() {
   const list = qs("#inquiry-cart-items");
   const submitButtons = document.querySelectorAll("[data-cart-channel]");
 
-  if (countBadge) countBadge.textContent = String(count);
+  if (countBadge) countBadge.textContent = count > 99 ? "99+" : String(count);
   if (cartLink) {
-    cartLink.setAttribute("aria-label", `Apri il carrello, ${count} ${count === 1 ? "articolo" : "articoli"}`);
+    const label = `Apri il carrello, ${count} ${count === 1 ? "articolo" : "articoli"}`;
+    cartLink.setAttribute("aria-label", label);
+    cartLink.title = label;
   }
   submitButtons.forEach((button) => {
     button.disabled = items.length === 0;
   });
-
   if (!list) return;
   if (!items.length) {
     list.innerHTML = `<p class="inquiry-cart-empty">La richiesta è vuota. Apri un prodotto e aggiungilo per chiedere la disponibilità.</p>`;
@@ -183,6 +189,7 @@ function setupCartControls(site) {
     event.preventDefault();
     if (!items.length || !form.reportValidity()) return;
     const message = buildRequestMessage(new FormData(form));
+    clearCart();
     openMailto(site.contact_email, "Richiesta di disponibilità", message);
     if (status) {
       status.textContent = "Si aprirà il programma email per completare la richiesta.";
@@ -197,6 +204,7 @@ function setupCartControls(site) {
       const message = buildRequestMessage(new FormData(form));
       copyToClipboard(message);
       if (!confirmInstagram("richiesta di disponibilità")) return;
+      clearCart();
       openInstagram(site);
       if (status) {
         status.textContent = "Messaggio copiato negli appunti. Incollalo nella chat Instagram.";
@@ -243,19 +251,29 @@ function addInquiryItem(product, selection = {}) {
 
 function setupInquiryCart(site) {
   const nav = qs("#site-nav");
-  if (nav && !qs("#inquiry-cart-toggle", nav)) {
+  const actions = qs(".nav-actions") || nav;
+  if (actions && !qs("#inquiry-cart-toggle")) {
     const link = document.createElement("a");
     link.id = "inquiry-cart-toggle";
     link.className = "nav-cart js-open-inquiry-cart";
     link.href = "#inquiry-cart";
-    link.innerHTML = '<span>Carrello</span><span class="nav-cart-count" id="inquiry-cart-count" aria-live="polite">0</span>';
+    link.setAttribute("aria-haspopup", "dialog");
+    link.setAttribute("aria-controls", "inquiry-cart-modal");
+    link.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 1.9-1.4L21 8H6"></path>
+        <circle cx="10" cy="20" r="1"></circle>
+        <circle cx="18" cy="20" r="1"></circle>
+      </svg>
+      <span class="nav-cart-count" id="inquiry-cart-count" aria-live="polite">0</span>
+    `;
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const topbar = qs(".topbar");
       if (topbar) topbar.classList.remove("is-open");
       qs(".nav-toggle")?.setAttribute("aria-expanded", "false");
     });
-    nav.appendChild(link);
+    actions.appendChild(link);
   }
 
   if (!qs("#inquiry-cart-modal")) {

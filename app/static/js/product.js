@@ -1,6 +1,5 @@
 import {
   ASSET_DIR,
-  COLOR_SWATCHES,
   buildOptimizedImageMarkup,
   escapeHtml,
   formatPrice,
@@ -39,8 +38,8 @@ function renderProductPage(product, reviews, site, allProducts) {
   const miniGallery = qs("#mini-gallery");
   const galleryDots = qs("#gallery-dots");
   const note = qs("#image-note");
-  const colorChips = qs("#color-chips");
-  const materialChips = qs("#material-chips");
+  const colorSelect = qs("#color-select");
+  const materialSelect = qs("#material-select");
   const colorOptionGroup = qs("#color-option-group");
   const materialOptionGroup = qs("#material-option-group");
   const colorSelectionState = qs("#color-selection-state");
@@ -108,32 +107,19 @@ function renderProductPage(product, reviews, site, allProducts) {
     galleryPlaceholder.style.display = "";
   }
 
-  const colorButtons = (product.colors || []).map((color) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "chip chip-btn";
-    btn.dataset.color = color;
-    btn.textContent = color;
-    btn.setAttribute("aria-pressed", "false");
-    const swatch = COLOR_SWATCHES[color];
-    if (swatch) {
-      btn.style.setProperty("--chip-bg", swatch.bg);
-      btn.style.setProperty("--chip-ink", swatch.text);
-    }
-    return btn;
-  });
-  colorButtons.forEach((btn) => colorChips.appendChild(btn));
+  function appendSelectOptions(select, values) {
+    if (!select) return [];
+    return (values || []).filter(Boolean).map((value) => {
+      const option = document.createElement("option");
+      option.value = String(value);
+      option.textContent = String(value);
+      select.appendChild(option);
+      return option;
+    });
+  }
 
-  const materialButtons = (product.materials || []).map((material) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "chip chip-btn";
-    btn.dataset.material = material;
-    btn.textContent = material;
-    btn.setAttribute("aria-pressed", "false");
-    return btn;
-  });
-  materialButtons.forEach((btn) => materialChips.appendChild(btn));
+  const colorOptions = appendSelectOptions(colorSelect, product.colors);
+  const materialOptions = appendSelectOptions(materialSelect, product.materials);
 
   let selectedColor = "";
   let selectedMaterial = "";
@@ -149,8 +135,8 @@ function renderProductPage(product, reviews, site, allProducts) {
   }
 
   function updateSelectionState() {
-    const colorReady = colorButtons.length > 0 && Boolean(selectedColor);
-    const materialReady = materialButtons.length > 0 && Boolean(selectedMaterial);
+    const colorReady = colorOptions.length > 0 && Boolean(selectedColor);
+    const materialReady = materialOptions.length > 0 && Boolean(selectedMaterial);
     const complete = colorReady && materialReady;
     const missing = [];
     const unconfigured = [];
@@ -165,20 +151,22 @@ function renderProductPage(product, reviews, site, allProducts) {
     }
 
     if (colorSelectionState) {
-      colorSelectionState.textContent = colorButtons.length === 0
+      colorSelectionState.textContent = colorOptions.length === 0
         ? "Nessun colore configurato"
         : selectedColor ? `Selezionato: ${selectedColor}` : "Seleziona un colore";
     }
     if (materialSelectionState) {
-      materialSelectionState.textContent = materialButtons.length === 0
+      materialSelectionState.textContent = materialOptions.length === 0
         ? "Nessun materiale configurato"
         : selectedMaterial ? `Selezionato: ${selectedMaterial}` : "Seleziona un materiale";
     }
+    if (colorSelect) colorSelect.setAttribute("aria-invalid", String(!colorReady));
+    if (materialSelect) materialSelect.setAttribute("aria-invalid", String(!materialReady));
 
     if (!colorReady) missing.push("il colore");
     if (!materialReady) missing.push("il materiale");
-    if (colorButtons.length === 0) unconfigured.push("il colore");
-    if (materialButtons.length === 0) unconfigured.push("il materiale");
+    if (colorOptions.length === 0) unconfigured.push("il colore");
+    if (materialOptions.length === 0) unconfigured.push("il materiale");
 
     if (selectionStatus) {
       selectionStatus.textContent = unconfigured.length
@@ -295,46 +283,28 @@ function renderProductPage(product, reviews, site, allProducts) {
     setActiveDot(activeGalleryIndex);
   }
 
-  function setActive(buttons, value) {
-    buttons.forEach((btn) => {
-      const isActive = btn.dataset.color === value || btn.dataset.material === value;
-      btn.classList.toggle("is-active", isActive);
-      btn.setAttribute("aria-pressed", String(isActive));
-    });
-  }
-
   function updateDisabledColors() {
-    if (!selectedMaterial) {
-      colorButtons.forEach((btn) => {
-        btn.disabled = false;
-        btn.classList.remove("is-disabled");
-      });
-      return;
-    }
-    const allowed = new Set(images.filter((img) => img.material === selectedMaterial && img.color).map((img) => img.color));
-    colorButtons.forEach((btn) => {
-      const enabled = allowed.size === 0 || allowed.has(btn.dataset.color);
-      btn.disabled = !enabled;
-      btn.classList.toggle("is-disabled", !enabled);
-      if (!enabled && selectedColor === btn.dataset.color) selectedColor = "";
+    const allowed = selectedMaterial
+      ? new Set(images.filter((img) => img.material === selectedMaterial && img.color).map((img) => img.color))
+      : null;
+    colorOptions.forEach((option) => {
+      const enabled = !allowed || allowed.size === 0 || allowed.has(option.value);
+      option.disabled = !enabled;
+      if (!enabled && selectedColor === option.value) selectedColor = "";
     });
+    if (colorSelect) colorSelect.value = selectedColor;
   }
 
   function updateDisabledMaterials() {
-    if (!selectedColor) {
-      materialButtons.forEach((btn) => {
-        btn.disabled = false;
-        btn.classList.remove("is-disabled");
-      });
-      return;
-    }
-    const allowed = new Set(images.filter((img) => img.color === selectedColor && img.material).map((img) => img.material));
-    materialButtons.forEach((btn) => {
-      const enabled = allowed.size === 0 || allowed.has(btn.dataset.material);
-      btn.disabled = !enabled;
-      btn.classList.toggle("is-disabled", !enabled);
-      if (!enabled && selectedMaterial === btn.dataset.material) selectedMaterial = "";
+    const allowed = selectedColor
+      ? new Set(images.filter((img) => img.color === selectedColor && img.material).map((img) => img.material))
+      : null;
+    materialOptions.forEach((option) => {
+      const enabled = !allowed || allowed.size === 0 || allowed.has(option.value);
+      option.disabled = !enabled;
+      if (!enabled && selectedMaterial === option.value) selectedMaterial = "";
     });
+    if (materialSelect) materialSelect.value = selectedMaterial;
   }
 
   function findMatch() {
@@ -437,8 +407,6 @@ function renderProductPage(product, reviews, site, allProducts) {
   function updateImage() {
     updateDisabledColors();
     updateDisabledMaterials();
-    setActive(colorButtons, selectedColor);
-    setActive(materialButtons, selectedMaterial);
     updateSelectionState();
     const hasImage = selectionHasImage();
     if (images.length) {
@@ -471,21 +439,19 @@ function renderProductPage(product, reviews, site, allProducts) {
     }
   }
 
-  colorButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.disabled) return;
-      selectedColor = btn.dataset.color === selectedColor ? "" : btn.dataset.color;
+  if (colorSelect) {
+    colorSelect.addEventListener("change", () => {
+      selectedColor = colorSelect.value;
       updateImage();
     });
-  });
+  }
 
-  materialButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (btn.disabled) return;
-      selectedMaterial = btn.dataset.material === selectedMaterial ? "" : btn.dataset.material;
+  if (materialSelect) {
+    materialSelect.addEventListener("change", () => {
+      selectedMaterial = materialSelect.value;
       updateImage();
     });
-  });
+  }
 
   if (mainImage) {
     mainImage.addEventListener("touchstart", (event) => {

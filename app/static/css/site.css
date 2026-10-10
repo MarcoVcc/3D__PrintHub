@@ -102,6 +102,14 @@ p {
   color: #ffffff;
 }
 
+.nav-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
 .nav .btn {
   padding: 0.5rem 1rem;
 }
@@ -181,4 +189,3 @@ body[data-page="products"] {
   font-size: 2rem;
   margin-bottom: 0.2rem;
 }
-

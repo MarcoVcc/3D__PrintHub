@@ -43,6 +43,24 @@ Questa versione e' **solo frontend**: nessun backend, nessun database server.
 
 ## 2) Guida Approfondita di Personalizzazione
 
+### Gestione prodotti con GUI Python
+
+Per consultare il catalogo e aggiungere un prodotto senza modificare il JSON a mano, apri il terminale nella cartella `static_app` e avvia:
+
+```bash
+py product_manager.py
+```
+
+La GUI legge `static_app/data/catalog.json` e `static_app/data/materials.json`, mostra prodotti e immagini già collegate e permette di aggiungere o modificare descrizioni, categoria, prezzi, materiali, colori, varianti e immagini. Il modulo del prodotto si apre in una finestra dedicata; dopo il salvataggio si svuota, così puoi iniziare subito una nuova scheda. Le nuove foto vengono copiate in `static_app/app/static/catalog/`; i dati vengono salvati mantenendo il formato già usato dal sito. Se inserisci un materiale o un colore nuovo, viene aggiunto anche a `materials.json` usando una foto associata come immagine campione.
+
+Puoi aprire una scheda vuota dal pulsante **Apri scheda nuova** nella finestra principale. Il modulo è organizzato in due colonne per mostrare informazioni, tag, immagini e varianti senza scorrere in verticale. **Azzera / nuovo** svuota il modulo; **Aggiungi al catalogo** salva il nuovo prodotto, mentre durante una modifica il pulsante diventa **Salva modifiche**. Se ci sono dati non salvati, la GUI chiede conferma prima di scartarli.
+
+La scheda **Selezione rapida** permette di selezionare più prodotti (Ctrl o Shift) e assegnare in blocco categoria, nuovi arrivi, best seller o evidenza. Nella scheda **Materiali** puoi creare e modificare materiali, proprietà, colori e immagini campione. Nei prodotti, i pulsanti **Scegli...** aprono elenchi con checkbox per selezionare materiali e colori già presenti o aggiungerne di nuovi.
+
+Quando rinomini un materiale o un colore nella scheda Materiali, la GUI aggiorna anche le corrispondenze usate nelle schede prodotto.
+
+La GUI usa Tkinter incluso in Python. Pillow è facoltativo e serve solo per visualizzare l’anteprima delle immagini esistenti.
+
 ### A. Dati sito, contatti e campi obbligatori
 File: `static_app/data/site.json`
 

@@ -54,7 +54,9 @@
                   <span class="option-required">Richiesto</span>
                 </div>
                 <p class="option-selection-state" id="color-selection-state">Seleziona un colore</p>
-                <div class="chips" id="color-chips"></div>
+                <select class="input product-option-select" id="color-select" aria-labelledby="color-option-title" aria-describedby="color-selection-state" required>
+                  <option value="">Scegli il colore</option>
+                </select>
               </div>
               <div class="option-group" id="material-option-group" role="group" aria-labelledby="material-option-title">
                 <div class="option-heading">
@@ -62,7 +64,9 @@
                   <span class="option-required">Richiesto</span>
                 </div>
                 <p class="option-selection-state" id="material-selection-state">Seleziona un materiale</p>
-                <div class="chips" id="material-chips"></div>
+                <select class="input product-option-select" id="material-select" aria-labelledby="material-option-title" aria-describedby="material-selection-state" required>
+                  <option value="">Scegli il materiale</option>
+                </select>
               </div>
               <p class="variant-selection-status" id="variant-selection-status" role="status" aria-live="polite">Scegli un colore e un materiale per aggiungere il prodotto al carrello.</p>
             </div>

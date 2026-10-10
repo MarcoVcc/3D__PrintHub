@@ -18,6 +18,13 @@
     display: inline-flex;
   }
 
+  .nav-actions {
+    grid-column: 2;
+    display: flex;
+    justify-self: end;
+    gap: 0.42rem;
+  }
+
   .nav {
     position: absolute;
     top: calc(100% + 0.35rem);

@@ -1,24 +1,6 @@
 const DATA_DIR = "data";
 const ASSET_DIR = "app/static";
 
-const COLOR_SWATCHES = {
-  "Verde acqua": { bg: "#7fd1c9", text: "#0f2a2c" },
-  "Verde erba": { bg: "#5f9f5b", text: "#ffffff" },
-  "Bianco opaco": { bg: "#f5f5f5", text: "#333333" },
-  "Bianco": { bg: "#f4f4f4", text: "#2a2a2a" },
-  "Terracotta": { bg: "#c97a5b", text: "#ffffff" },
-  "Sabbia": { bg: "#e8d6c0", text: "#5b4a3a" },
-  "Nero opaco": { bg: "#1f1f1f", text: "#f0f0f0" },
-  "Nero": { bg: "#1b1b1b", text: "#f5f5f5" },
-  "Verde scuro": { bg: "#2e5d50", text: "#f0fff9" },
-  "Grigio pietra": { bg: "#bfc3c7", text: "#2b2e33" },
-  "Multicolor": { bg: "linear-gradient(135deg, #f16f6f 0%, #f2c84b 32%, #7fb6e8 68%, #7fd1c9 100%)", text: "#10263a" },
-  "Blu": { bg: "#7fb6e8", text: "#0f2a2c" },
-  "Rosso": { bg: "#e38b7a", text: "#2b1a15" },
-  "Rosa": { bg: "#f2b8c6", text: "#3a2530" },
-  "Argento": { bg: "#d2d7dc", text: "#243140" }
-};
-
 const state = {
   site: null,
   catalog: null,
@@ -158,6 +140,14 @@ function setupNavMenu() {
     toggle.innerHTML = "<span></span><span></span><span></span>";
     topbar.querySelector(".container")?.insertBefore(toggle, nav);
   }
+
+  let actions = qs(".nav-actions", topbar);
+  if (!actions) {
+    actions = document.createElement("div");
+    actions.className = "nav-actions";
+    nav.insertAdjacentElement("afterend", actions);
+  }
+  if (toggle.parentElement !== actions) actions.appendChild(toggle);
 
   if (!nav.id) nav.id = "site-nav";
   toggle.setAttribute("aria-controls", nav.id);
@@ -357,7 +347,6 @@ function setupCustomForm(site) {
 }
 export {
   ASSET_DIR,
-  COLOR_SWATCHES,
   PRODUCT_SLUG_ALIASES,
   applyRequired,
   applySiteData,
